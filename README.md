@@ -1,1 +1,1 @@
-Napaka Pogii koo sirrr
+Sir kahit uno lang poooo
