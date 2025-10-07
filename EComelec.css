@@ -1,3 +1,98 @@
+/* Modern Candidacy Form Styles */
+.hero-form {
+  background: purple;
+  color: #fff;
+  padding: 2.5rem 0 1.5rem 0;
+  text-align: center;
+}
+.hero-form-text h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.hero-form-text p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.candidacy-form-modern {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 60vh;
+  background: #f7f8fa;
+  padding: 2rem 0 2.5rem 0;
+}
+.form-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(25, 118, 210, 0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 420px;
+  width: 100%;
+}
+.form-title {
+  text-align: center;
+  color: #1a237e;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.modern-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.modern-form-group label {
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+.modern-form-group input,
+.modern-form-group select {
+  padding: 0.7em 1em;
+  border: 1.5px solid #b0bec5;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f4f6fb;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.modern-form-group input:focus,
+.modern-form-group select:focus {
+  border: 1.5px solid #1976d2;
+  box-shadow: 0 0 0 2px #e3f2fd;
+}
+.modern-submit {
+  background: #1976d2;
+  color: #fff;
+  padding: 0.8em 2em;
+  border: none;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+}
+.modern-submit:hover {
+  background: #1565c0;
+}
+@media (max-width: 600px) {
+  .form-container {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .hero-form-text h1 {
+    font-size: 1.3rem;
+  }
+}
 /* General */
 * {
   margin: 0;

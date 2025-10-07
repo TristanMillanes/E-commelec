@@ -11,7 +11,7 @@
   <!-- Navigation -->
   <nav>
     <div class="logo">
-      <img src="image/comelec.png" alt="e-COMELEC Logo">
+      <img src="images/comelec.png" alt="e-COMELEC Logo">
       <div class="logo-text">
         <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
         <span class="commission">COMMISSION ON ELECTION</span>
@@ -26,49 +26,47 @@
   </nav>
 
   <!-- Header -->
-  <header class="hero">
-    <div class="hero-text">
-      <h1>APPLY FOR CANDIDACY</h1>
+  <header class="hero-form">
+    <div class="hero-form-text">
+      <h1>Apply for Candidacy</h1>
       <p>Submit your application to run for student government elections.</p>
     </div>
   </header>
 
-  <!-- Form Section -->
-  <section class="candidacy-form">
-    <h2>Candidacy Application Form</h2>
-    <form action="#" method="post">
-      <div class="form-group">
-        <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
-      </div>
-
-      <div class="form-group">
-        <label for="idnumber"><i class="fas fa-id-card"></i> Student ID</label>
-        <input type="text" id="idnumber" name="idnumber" placeholder="Enter your student ID" required>
-      </div>
-
-      <div class="form-group">
-        <label for="course"><i class="fas fa-graduation-cap"></i> Course & Year</label>
-        <input type="text" id="course" name="course" placeholder="e.g. BSIT 3rd Year" required>
-      </div>
-
-      <div class="form-group">
-        <label for="position"><i class="fas fa-briefcase"></i> Desired Position</label>
-        <select id="position" name="position" required>
-          <option value="">-- Select Position --</option>
-          <option value="Senator ">Senator</option>
-          <option value="Governor">Governor</option>
-          <option value="Vice Governor">Vice Governor</option>
-          <option value="Secretary">Secretary</option>
-          <option value="CH For Finance and IGP">CH For Finance and IGP</option>
-          <option value="Auditor">Auditor</option>
-          <option value="PIO">Public Information Officer</option>
-          <option value="Representative">Representative</option>
-        </select>
-      </div>
-
-      <button type="submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
-    </form>
+  <!-- Modern Form Section -->
+  <section class="candidacy-form-modern">
+    <div class="form-container">
+      <h2 class="form-title">Candidacy Application Form</h2>
+      <form action="#" method="post" class="modern-form">
+        <div class="modern-form-group">
+          <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+        <div class="modern-form-group">
+          <label for="idnumber"><i class="fas fa-id-card"></i> Student ID</label>
+          <input type="text" id="idnumber" name="idnumber" placeholder="Enter your student ID" required>
+        </div>
+        <div class="modern-form-group">
+          <label for="course"><i class="fas fa-graduation-cap"></i> Course & Year</label>
+          <input type="text" id="course" name="course" placeholder="e.g. BSIT 3rd Year" required>
+        </div>
+        <div class="modern-form-group">
+          <label for="position"><i class="fas fa-briefcase"></i> Desired Position</label>
+          <select id="position" name="position" required>
+            <option value="">-- Select Position --</option>
+            <option value="Senator">Senator</option>
+            <option value="Governor">Governor</option>
+            <option value="Vice Governor">Vice Governor</option>
+            <option value="Secretary">Secretary</option>
+            <option value="CH For Finance and IGP">CH For Finance and IGP</option>
+            <option value="Auditor">Auditor</option>
+            <option value="PIO">Public Information Officer</option>
+            <option value="Representative">Representative</option>
+          </select>
+        </div>
+        <button type="submit" class="modern-submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
