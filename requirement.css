@@ -1,0 +1,186 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: white;
+  color: #FFD700 ;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #FFD700, #4b0073);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+nav .logo-text .university {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav .logo-text .commission {
+  font-size: 12px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #FFD700;
+}
+
+nav ul li a i {
+  margin-right: 6px;
+}
+
+/* Hero */
+.hero {
+  background: url("image/hero-bg.jpg") center/cover no-repeat;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+}
+
+/* Sections */
+section {
+  padding: 40px 60px;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #800080;
+}
+
+section p {
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  font-size: 16px;
+}
+
+/* Cards */
+.announcement-container,
+.upcoming-container,
+.officer-container,
+.selection-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.announcement-card,
+.upcoming-card,
+.officer-card,
+.selection-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.announcement-card:hover,
+.upcoming-card:hover,
+.officer-card:hover,
+.selection-box:hover {
+  transform: translateY(-5px);
+}
+
+.selection-box a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #FFD700, #800080);
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.selection-box a:hover {
+  opacity: 0.8;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #FFD700, #800080);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.footer-icons {
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-icons a:hover {
+  color: #FFD700;
+}
+
+.footer-icons i {
+  margin-right: 6px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Candidacy - Campus e-COMELEC</title>
+  <link rel="stylesheet" href="EComelec.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <img src="image/comelec.png" alt="e-COMELEC Logo">
+      <div class="logo-text">
+        <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
+        <span class="commission">COMMISSION ON ELECTION</span>
+      </div>
+    </div>
+    <ul>
+      <li><a href="EComelec.html">Home</a></li>
+      <li><a href="About.html">About Comelec</a></li>
+      <li><a href="result.html">Results</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>APPLY FOR CANDIDACY</h1>
+      <p>Submit your application to run for student government elections.</p>
+    </div>
+  </header>
+
+  <!-- Form Section -->
+  <section class="candidacy-form">
+    <h2>Candidacy Application Form</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="idnumber"><i class="fas fa-id-card"></i> Student ID</label>
+        <input type="text" id="idnumber" name="idnumber" placeholder="Enter your student ID" required>
+      </div>
+
+      <div class="form-group">
+        <label for="course"><i class="fas fa-graduation-cap"></i> Course & Year</label>
+        <input type="text" id="course" name="course" placeholder="e.g. BSIT 3rd Year" required>
+      </div>
+
+      <div class="form-group">
+        <label for="position"><i class="fas fa-briefcase"></i> Desired Position</label>
+        <select id="position" name="position" required>
+          <option value="">-- Select Position --</option>
+          <option value="Senator ">Senator</option>
+          <option value="Governor">Governor</option>
+          <option value="Vice Governor">Vice Governor</option>
+          <option value="Secretary">Secretary</option>
+          <option value="CH For Finance and IGP">CH For Finance and IGP</option>
+          <option value="Auditor">Auditor</option>
+          <option value="PIO">Public Information Officer</option>
+          <option value="Representative">Representative</option>
+        </select>
+      </div>
+
+      <button type="submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Campus e-COMELEC. All Rights Reserved.</p>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i> Email</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
