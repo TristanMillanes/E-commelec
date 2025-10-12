@@ -4,91 +4,117 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>e-COMELEC - Results</title>
-  <link rel="stylesheet" href="result.css">
+  <link rel="stylesheet" href="EComelec.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="main.js"></script>
 </head>
+<script>
+// Navigation link sliding box animation
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  const links = nav.querySelectorAll('ul li a');
+  // Create the sliding box
+  const slideBox = document.createElement('span');
+  slideBox.className = 'nav-slide-box';
+  nav.appendChild(slideBox);
+
+  function moveBoxTo(link) {
+    const rect = link.getBoundingClientRect();
+    const navRect = nav.getBoundingClientRect();
+    slideBox.style.width = rect.width + 'px';
+    slideBox.style.height = rect.height + 'px';
+    slideBox.style.left = (rect.left - navRect.left) + 'px';
+    slideBox.style.top = (rect.top - navRect.top) + 'px';
+    slideBox.style.opacity = 1;
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      moveBoxTo(link);
+    });
+    link.addEventListener('mouseenter', function() {
+      moveBoxTo(link);
+    });
+  });
+  nav.addEventListener('mouseleave', function() {
+    slideBox.style.opacity = 0;
+  });
+});
+</script>
 <body>
+  <!-- Navigation -->
+  <!-- Navigation -->
   <nav>
     <div class="logo">
       <img src="images/comelec.png" alt="e-COMELEC Logo">
-      <span>e-COMELEC</span>
+      <div class="logo-text">
+        <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
+        <span class="commission">COMMISSION ON ELECTION</span>
+      </div>
     </div>
     <ul>
-     <ul>
-      <li><a href="EComelec.html">Home</a></li>
-      <li><a href="About.html">About Comelec</a></li>
-      <li><a href="#">Vote</a></li>
-      <li><a href="result.html">Results</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+      <li><a href="EComelec.html"><i class="fas fa-home"></i>Home</a></li>
+      <li><a href="About.html"><i class="fas fa-info-circle"></i>About</a></li>
+      <li><a href="#"><i class="fas fa-vote-yea"></i>Vote</a></li>
+      <li><a href="result.html"><i class="fas fa-chart-bar"></i>Results</a></li>
+      <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
     </ul>
   </nav>
 
+
   <!-- Results Section -->
   <section class="results">
-    <h1>Election Results</h1>
-    <h2>SUPREME STUDENT COUNCIL LUCENA CAMPUS</h2>
-    <h2>ACADEMIC YEAR 2025-2026</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Position</th>
-          <th>Candidate</th>
-          <th>Vote Percentage Affirmative</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Senator</td>
-          <td>Janet G. Manjares</td>
-          <td>95.6%</td>
-        </tr>
-        <tr>
-          <td>Governor</td>
-          <td>Rojean Mae Clariss B. Baron</td>
-          <td>92.3%</td>
-        </tr>
-        <tr>
-          <td>Vice Governor</td>
-          <td>Francis Portes</td>
-          <td>94%</td>
-        </tr>
-        <tr>
-          <td>Councilor for Culture and Arts</td>
-          <td>Beth Sharmel Ramos</td>
-          <td>85.1%</td>
-        </tr>
-            <tr>
-          <td>Councilor for Gender and Development</td>
-          <td>Jericho Carlos</td>
-          <td>91.1%</td>
-        </tr>
-             <tr>
-          <td>Councilor for Health and Environment</td>
-          <td>Iya Mae Pornela</td>
-          <td>82.3%</td>
-        </tr>
-            <tr>
-          <td>Councilor for Students' Rights And welfare</td>
-          <td>Christine Mae Fabula</td>
-          <td>85.5%</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="officers">
-    <h2>Elected Officers</h2>
-    <div class="officer-list">
-      <div class="officer-card">
-        <img src="images/officer1.jpg" alt="President">
-        <h3>Juan Dela Cruz</h3>
-        <p>President</p>
-      </div>
-      <div class="officer-card">
-        <img src="images/officer2.jpg" alt="Vice President">
-        <h3>Jose Reyes</h3>
-        <p>Vice President</p>
-      </div>
+    <div class="results-box">
+      <h1>Election Results</h1>
+      <h2>SUPREME STUDENT COUNCIL LUCENA CAMPUS</h2>
+      <h2>ACADEMIC YEAR 2025-2026</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Candidate</th>
+            <th>Vote Percentage Affirmative</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Senator</td>
+            <td>Janet G. Manjares</td>
+            <td>95.6%</td>
+          </tr>
+          <tr>
+            <td>Governor</td>
+            <td>Rojean Mae Clariss B. Baron</td>
+            <td>92.3%</td>
+          </tr>
+          <tr>
+            <td>Vice Governor</td>
+            <td>Francis Portes</td>
+            <td>94%</td>
+          </tr>
+          <tr>
+            <td>Councilor for Culture and Arts</td>
+            <td>Beth Sharmel Ramos</td>
+            <td>85.1%</td>
+          </tr>
+          <tr>
+            <td>Councilor for Gender and Development</td>
+            <td>Jericho Carlos</td>
+            <td>91.1%</td>
+          </tr>
+          <tr>
+            <td>Councilor for Health and Environment</td>
+            <td>Iya Mae Pornela</td>
+            <td>82.3%</td>
+          </tr>
+          <tr>
+            <td>Councilor for Students' Rights And welfare</td>
+            <td>Christine Mae Fabula</td>
+            <td>85.5%</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 

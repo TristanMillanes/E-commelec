@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="EComelec.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script src="main.js"></script> 
 <body>
   <!-- Navigatio-->
   <nav>
@@ -25,6 +26,13 @@
       <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
     </ul>
   </nav>
+    <!-- Sliding Announcement Bar -->
+  <div class="sliding-announcement" id="slidingAnnouncement">
+    <div class="sliding-announcement-track" id="slidingAnnouncementTrack">
+      <span>Voting Starts on October 10! &nbsp;|&nbsp; Candidate Orientation: October 8, 2:00 PM &nbsp;|&nbsp; Results Published October 13</span>
+    </div>
+  </div>
+
 
   <!-- Hero Section -->
   <header class="hero">
@@ -34,14 +42,14 @@
     </div>
   </header>
 
-  <!-- About -->
-  <section class="about">
-    <h2>SLSU Lucena E-Comelec</h2>
-    <p>
-      The Campus e-COMELEC provides students with a faster, safer, and more 
-      transparent way to cast their votes during school elections. 
-      With just a few clicks, you can vote anytime, anywhere.
-    </p>
+   <!-- Democracy Section -->
+  <section class="democracy-section">
+    <div class="democracy-box">
+      <h2><i class="fas fa-balance-scale"></i> Democracy in Action</h2>
+      <p>
+        Democracy is the foundation of our student council. Your vote is your voice—by participating in the election, you help shape the future of our campus. Every student has the right and responsibility to be heard. Let’s work together for a fair, transparent, and inclusive election!
+      </p>
+    </div>
   </section>
 
   <!-- Announcement -->
@@ -62,6 +70,54 @@
       </div>
     </div>
   </section>
+
+  <!-- Election Dashboard -->
+  <section class="dashboard">
+    <h2 class="dashboard-title"><i class="fas fa-tachometer-alt"></i> Election Status Dashboard</h2>
+    <div class="dashboard-cards">
+      <div class="dashboard-card">
+        <div class="dashboard-icon"><i class="fas fa-users"></i></div>
+        <div class="dashboard-info">
+          <span class="dashboard-label">Total Registered Voters</span>
+          <span class="dashboard-value" id="total-voters">N/A</span>
+        </div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-icon"><i class="fas fa-vote-yea"></i></div>
+        <div class="dashboard-info">
+          <span class="dashboard-label">Votes Cast</span>
+          <span class="dashboard-value" id="votes-cast">0</span>
+        </div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-icon"><i class="fas fa-user-tie"></i></div>
+        <div class="dashboard-info">
+          <span class="dashboard-label">Candidates</span>
+          <span class="dashboard-value" id="candidates">0</span>
+        </div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-icon"><i class="fas fa-bullhorn"></i></div>
+        <div class="dashboard-info">
+          <span class="dashboard-label">Election Status</span>
+          <span class="dashboard-value status-open" id="election-status">TBA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- About -->
+  <section class="about">
+    <h2>SLSU Lucena E-Comelec</h2>
+    <p>
+      The Campus e-COMELEC provides students with a faster, safer, and more 
+      transparent way to cast their votes during school elections. 
+      With just a few clicks, you can vote anytime, anywhere.
+    </p>
+  </section>
+
 
   <!-- Upcoming Events -->
   <section class="upcoming">
