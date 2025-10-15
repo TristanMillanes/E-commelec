@@ -628,8 +628,8 @@ nav ul li a:hover {
   display: inline-block;
   color: #fff;
   background: #6a0dad;
-  padding: 10px 16px;
-  border-radius: 6px;
+  padding: 15px 16px;
+  border-radius: 10px;
 }
 .selection-box a:hover {
   background: #4b0073;
