@@ -1,129 +1,270 @@
-/* --- Voting Section Styles --- */
+/* --- Voting Section Styles (Premium Enhanced Version) --- */
 .voting-section {
-  padding: 50px 20px;
-  background: #f8f9fb;
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #dff9fb, #c7ecee, #ffffff);
+  font-family: "Poppins", sans-serif;
+  color: #2f3640;
 }
 
+/* Container */
 .voting-section .container {
-  max-width: 900px;
+  max-width: 950px;
   margin: auto;
-  background: #fff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
 }
 
+.voting-section .container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 184, 148, 0.2);
+}
+
+/* Header */
 .voting-section h2 {
   text-align: center;
-  color: #2f3640;
-  margin-bottom: 30px;
+  color: #004d40;
+  font-size: 2.3em;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+.voting-section h2::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 5px;
+  background: linear-gradient(90deg, #00b894, #1abc9c);
+  margin: 15px auto 0;
+  border-radius: 3px;
+}
+
+/* Voter Info */
 .voter-info {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 18px;
   justify-content: space-between;
 }
 
 .voter-info input {
   flex: 1;
   min-width: 220px;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 13px 15px;
+  border: 1.5px solid #ddd;
+  border-radius: 12px;
   font-size: 15px;
+  transition: all 0.3s ease;
+  background: #fdfdfd;
 }
 
+.voter-info input:focus {
+  border-color: #00b894;
+  box-shadow: 0 0 8px rgba(0, 184, 148, 0.3);
+  outline: none;
+  background: #ffffff;
+}
+
+/* Candidate Card */
 .candidate {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #f8f9fa, #f1f2f6);
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.candidate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(0, 184, 148, 0.15), rgba(255, 255, 255, 0));
+  transition: 0.5s;
+}
+
+.candidate:hover::before {
+  left: 100%;
 }
 
 .candidate:hover {
-  background: #f1f2f6;
-  transform: scale(1.01);
+  background: #e8fffa;
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 184, 148, 0.15);
 }
 
 .candidate img {
-  width: 80px;
-  height: 80px;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 15px;
+  border: 3px solid #00b894;
+  margin-right: 20px;
+  transition: transform 0.3s ease, border-color 0.3s;
 }
 
+.candidate:hover img {
+  transform: rotate(-3deg) scale(1.08);
+  border-color: #1abc9c;
+}
+
+/* Candidate Info */
 .candidate-info {
   flex: 1;
 }
 
-.candidate input[type="radio"] {
-  transform: scale(1.4);
+.candidate-info h4 {
+  margin: 0;
+  font-size: 1.15em;
+  color: #2f3640;
+  font-weight: 700;
 }
 
+.candidate-info p {
+  margin: 6px 0 0;
+  color: #636e72;
+  font-size: 0.9em;
+}
+
+/* Radio Button */
+.candidate input[type="radio"] {
+  transform: scale(1.7);
+  accent-color: #00b894;
+  cursor: pointer;
+}
+
+/* Vote Button */
 .vote-btn {
-  background: #006266;
+  display: block;
+  background: linear-gradient(135deg, #009688, #00b894);
   color: white;
   border: none;
-  padding: 12px 28px;
-  border-radius: 8px;
+  padding: 15px 40px;
+  border-radius: 12px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 35px auto 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 184, 148, 0.35);
 }
 
 .vote-btn:hover {
-  background: #1289A7;
+  background: linear-gradient(135deg, #00b894, #1abc9c);
+  box-shadow: 0 8px 25px rgba(0, 184, 148, 0.45);
+  transform: translateY(-2px);
 }
 
+/* Message */
 .message {
   text-align: center;
-  font-weight: bold;
-  color: #27ae60;
-  margin-top: 20px;
+  font-weight: 600;
+  color: #00b894;
+  margin-top: 30px;
+  font-size: 1.15em;
   display: none;
 }
 
-/* --- Modal --- */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  animation: fadeInBg 0.5s ease forwards;
 }
 
 .modal-content {
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 35px;
+  border-radius: 16px;
   width: 90%;
-  max-width: 400px;
+  max-width: 430px;
   margin: 10% auto;
   text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: #004d40;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.modal-content p {
+  color: #555;
+  font-size: 1em;
+  margin-bottom: 25px;
 }
 
 .modal button {
-  background: #44bd32;
+  background: linear-gradient(135deg, #00b894, #1abc9c);
   color: #fff;
   border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  margin-top: 15px;
+  padding: 12px 26px;
+  border-radius: 10px;
+  margin-top: 10px;
   cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .modal button:hover {
-  background: #27ae60;
+  background: linear-gradient(135deg, #1abc9c, #00b894);
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .candidate {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .candidate img {
+    margin: 0 auto 10px;
+  }
+
+  .vote-btn {
+    width: 100%;
+  }
+
+  .voter-info {
+    flex-direction: column;
+  }
 }
