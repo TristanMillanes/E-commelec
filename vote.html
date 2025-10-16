@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vote | Campus e-COMELEC</title>
-  <link rel="stylesheet" href="EComelec.css">
+  <link rel="stylesheet" href="vote.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="main.js" defer></script>
+
 </head>
 
 <body>
@@ -28,7 +29,7 @@
     </ul>
   </nav>
 
-  <!-- Sliding Announcement -->
+  <!-- Announcement -->
   <div class="sliding-announcement" id="slidingAnnouncement">
     <div class="sliding-announcement-track" id="slidingAnnouncementTrack">
       <span>Voting Starts on October 10! &nbsp;|&nbsp; Candidate Orientation: October 8, 2:00 PM &nbsp;|&nbsp; Results Published October 13</span>
@@ -43,107 +44,105 @@
     </div>
   </header>
 
-  <!-- Voting Form -->
-  <section class="voting-section">
-    <div class="container">
-      <h2><i class="fas fa-ballot-check"></i> Fill Out and Cast Your Vote</h2>
+  <!-- Modern Voting Section -->
+  <section class="modern-voting">
+    <div class="vote-container">
+      <h2><i class="fas fa-ballot-check"></i> Vote for Your Candidate</h2>
 
       <form id="voteForm">
-        <!-- Voter Information -->
-        <div class="voter-info">
-          <input type="text" id="studentName" name="studentName" placeholder="Full Name" required>
-          <input type="text" id="studentID" name="studentID" placeholder="Student ID" required>
+        <!-- Voter Info -->
+        <div class="voter-fields">
+          <input type="text" id="studentName" placeholder="Full Name" required>
+          <input type="text" id="studentID" placeholder="Student ID" required>
         </div>
 
-        <!-- Candidate List -->
-        <div class="candidate">
-          <img src="images/candidate1.jpg" alt="Rojean Mae Clariss Baron">
-          <div class="candidate-info">
-            <h3>Rojean Mae Clariss Baron</h3>
-            <p>Platform: Education and Youth Empowerment</p>
-          </div>
-          <input type="radio" name="candidate" value="Rojean Mae Clariss Baron" required>
-        </div>
+        <!-- Candidate Cards -->
+        <div class="candidate-grid">
+          <label class="candidate-card">
+            <input type="radio" name="candidate" value="Rojean Mae Clariss Baron" required>
+            <div class="candidate-content">
+              <img src="images/candidate1.jpg" alt="Rojean Mae Clariss Baron">
+              <div class="candidate-details">
+                <h3>Rojean Mae Clariss Baron</h3>
+                <p>Education and Youth Empowerment</p>
+              </div>
+            </div>
+          </label>
 
-        <div class="candidate">
-          <img src="images/candidate2.jpg" alt="Janet Manjares">
-          <div class="candidate-info">
-            <h3>Janet Manjares</h3>
-            <p>Platform: Senator</p>
-          </div>
-          <input type="radio" name="candidate" value="Janet Manjares">
-        </div>
+          <label class="candidate-card">
+            <input type="radio" name="candidate" value="Janet Manjares">
+            <div class="candidate-content">
+              <img src="images/candidate2.jpg" alt="Janet Manjares">
+              <div class="candidate-details">
+                <h3>Janet Manjares</h3>
+                <p>Senator</p>
+              </div>
+            </div>
+          </label>
 
-        <div class="candidate">
-          <img src="images/candidate3.jpg" alt="Francis Portes">
-          <div class="candidate-info">
-            <h3>Francis Portes</h3>
-            <p>Platform: Vice Governor</p>
-          </div>
-          <input type="radio" name="candidate" value="Francis Portes">
-        </div>
+          <label class="candidate-card">
+            <input type="radio" name="candidate" value="Francis Portes">
+            <div class="candidate-content">
+              <img src="images/candidate3.jpg" alt="Francis Portes">
+              <div class="candidate-details">
+                <h3>Francis Portes</h3>
+                <p>Vice Governor</p>
+              </div>
+            </div>
+          </label>
 
-        <div class="candidate">
-          <img src="images/candidate4.jpg" alt="Beth Sharmel Ramos">
-          <div class="candidate-info">
-            <h3>Beth Sharmel Ramos</h3>
-            <p>Platform: Culture and Arts</p>
-          </div>
-          <input type="radio" name="candidate" value="Beth Sharmel Ramos">
-        </div>
+          <label class="candidate-card">
+            <input type="radio" name="candidate" value="Beth Sharmel Ramos">
+            <div class="candidate-content">
+              <img src="images/candidate4.jpg" alt="Beth Sharmel Ramos">
+              <div class="candidate-details">
+                <h3>Beth Sharmel Ramos</h3>
+                <p>Culture and Arts</p>
+              </div>
+            </div>
+          </label>
 
-        <div class="candidate">
-          <img src="images/candidate5.jpg" alt="Iyah Pornela">
-          <div class="candidate-info">
-            <h3>Iyah Pornela</h3>
-            <p>Platform: Health and Environment</p>
-          </div>
-          <input type="radio" name="candidate" value="Iyah Pornela">
-        </div>
+          <label class="candidate-card">
+            <input type="radio" name="candidate" value="Iyah Pornela">
+            <div class="candidate-content">
+              <img src="images/candidate5.jpg" alt="Iyah Pornela">
+              <div class="candidate-details">
+                <h3>Iyah Pornela</h3>
+                <p>Health and Environment</p>
+              </div>
+            </div>
+          </label>
 
-        <div class="candidate">
-          <img src="images/candidate6.jpg" alt="Jericho Carlos">
-          <div class="candidate-info">
-            <h3>Jericho Carlos</h3>
-            <p>Platform: Gender and Development</p>
-          </div>
-          <input type="radio" name="candidate" value="Jericho Carlos">
+          <label class="candidate-card">
+            <input type="radio" name="candidate" value="Jericho Carlos">
+            <div class="candidate-content">
+              <img src="images/candidate6.jpg" alt="Jericho Carlos">
+              <div class="candidate-details">
+                <h3>Jericho Carlos</h3>
+                <p>Gender and Development</p>
+              </div>
+            </div>
+          </label>
         </div>
 
         <!-- Submit Button -->
-        <div style="text-align:center; margin-top:25px;">
-          <button type="submit" class="vote-btn">
-            <i class="fas fa-paper-plane"></i> Submit Vote
-          </button>
-        </div>
+        <button type="submit" class="modern-btn">
+          <i class="fas fa-paper-plane"></i> Submit Vote
+        </button>
       </form>
-
-      <!-- Success Message -->
-      <p class="message" id="message" style="display:none;">
-        ✅ Thank you! Your vote has been recorded.
-      </p>
+      <p class="success-msg" id="message">✅ Thank you! Your vote has been recorded.</p>
     </div>
   </section>
-
-  <!-- Confirmation Modal -->
-  <div id="confirmationModal" class="modal">
-    <div class="modal-content">
-      <i class="fas fa-check-circle" style="font-size:50px; color:#27ae60;"></i>
-      <h3>Vote Submitted!</h3>
-      <p>Your vote has been successfully recorded.<br>Thank you for participating!</p>
-      <button id="closeModal">Close</button>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
       <p>&copy; 2025 Campus e-COMELEC. All Rights Reserved.</p>
       <div class="footer-icons">
-        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-        <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i> Email</a>
-        <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
-      </div>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+      </div>  
     </div>
   </footer>
 </body>
