@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vote | Campus e-COMELEC</title>
-  <link rel="stylesheet" href="vote.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="main.js" defer></script>
 
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="vote.css" />
 </head>
 
 <body>
-  <!-- Navigation -->
+  <!-- =============== NAVIGATION =============== -->
   <nav>
     <div class="logo">
-      <img src="images/comelec.png" alt="e-COMELEC Logo">
+      <img src="images/comelec.png" alt="e-COMELEC Logo" />
       <div class="logo-text">
         <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
         <span class="commission">COMMISSION ON ELECTION</span>
@@ -22,128 +27,54 @@
     </div>
     <ul>
       <li><a href="EComelec.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a class="active" href="vote.html"><i class="fas fa-vote-yea"></i> Vote</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="vote.html" class="active"><i class="fas fa-vote-yea"></i> Vote</a></li>
       <li><a href="result.html"><i class="fas fa-chart-bar"></i> Results</a></li>
       <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Announcement -->
-  <div class="sliding-announcement" id="slidingAnnouncement">
-    <div class="sliding-announcement-track" id="slidingAnnouncementTrack">
-      <span>Voting Starts on October 10! &nbsp;|&nbsp; Candidate Orientation: October 8, 2:00 PM &nbsp;|&nbsp; Results Published October 13</span>
+  <!-- =============== MAIN CONTENT =============== -->
+  <div class="container">
+    <h1>Campus Voting Page</h1>
+    <p>Please fill out the form below to cast your vote.</p>
+
+    <div class="vote-form">
+      <h2>Vote for Your Candidate</h2>
+
+      <form>
+        <label for="studentName">Full Name</label>
+        <input type="text" id="studentName" placeholder="Enter your full name" required>
+
+        <label for="studentEmail">Student Email</label>
+        <input type="email" id="studentEmail" placeholder="Enter your email" required>
+
+        <label for="position">Select Position</label>
+        <select id="position" required>
+          <option value="" disabled selected>Choose position</option>
+          <option value="President">President</option>
+          <option value="Vice President">Vice President</option>
+          <option value="Secretary">Secretary</option>
+          <option value="Treasurer">Treasurer</option>
+          <option value="Auditor">Auditor</option>
+        </select>
+
+        <label for="candidate">Select Candidate</label>
+        <select id="candidate" required>
+          <option value="" disabled selected>Choose candidate</option>
+          <option value="Candidate1">Candidate 1</option>
+          <option value="Candidate2">Candidate 2</option>
+          <option value="Candidate3">Candidate 3</option>
+        </select>
+
+        <button type="submit"><i class="fas fa-paper-plane"></i> Submit Vote</button>
+      </form>
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <header class="hero vote-hero">
-    <div class="hero-text">
-      <h1>CAST YOUR VOTE</h1>
-      <p>Make your voice heard — your vote shapes the future of SLSU Lucena!</p>
-    </div>
-  </header>
-
-  <!-- Modern Voting Section -->
-  <section class="modern-voting">
-    <div class="vote-container">
-      <h2><i class="fas fa-ballot-check"></i> Vote for Your Candidate</h2>
-
-      <form id="voteForm">
-        <!-- Voter Info -->
-        <div class="voter-fields">
-          <input type="text" id="studentName" placeholder="Full Name" required>
-          <input type="text" id="studentID" placeholder="Student ID" required>
-        </div>
-
-        <!-- Candidate Cards -->
-        <div class="candidate-grid">
-          <label class="candidate-card">
-            <input type="radio" name="candidate" value="Rojean Mae Clariss Baron" required>
-            <div class="candidate-content">
-              <img src="images/candidate1.jpg" alt="Rojean Mae Clariss Baron">
-              <div class="candidate-details">
-                <h3>Rojean Mae Clariss Baron</h3>
-                <p>Education and Youth Empowerment</p>
-              </div>
-            </div>
-          </label>
-
-          <label class="candidate-card">
-            <input type="radio" name="candidate" value="Janet Manjares">
-            <div class="candidate-content">
-              <img src="images/candidate2.jpg" alt="Janet Manjares">
-              <div class="candidate-details">
-                <h3>Janet Manjares</h3>
-                <p>Senator</p>
-              </div>
-            </div>
-          </label>
-
-          <label class="candidate-card">
-            <input type="radio" name="candidate" value="Francis Portes">
-            <div class="candidate-content">
-              <img src="images/candidate3.jpg" alt="Francis Portes">
-              <div class="candidate-details">
-                <h3>Francis Portes</h3>
-                <p>Vice Governor</p>
-              </div>
-            </div>
-          </label>
-
-          <label class="candidate-card">
-            <input type="radio" name="candidate" value="Beth Sharmel Ramos">
-            <div class="candidate-content">
-              <img src="images/candidate4.jpg" alt="Beth Sharmel Ramos">
-              <div class="candidate-details">
-                <h3>Beth Sharmel Ramos</h3>
-                <p>Culture and Arts</p>
-              </div>
-            </div>
-          </label>
-
-          <label class="candidate-card">
-            <input type="radio" name="candidate" value="Iyah Pornela">
-            <div class="candidate-content">
-              <img src="images/candidate5.jpg" alt="Iyah Pornela">
-              <div class="candidate-details">
-                <h3>Iyah Pornela</h3>
-                <p>Health and Environment</p>
-              </div>
-            </div>
-          </label>
-
-          <label class="candidate-card">
-            <input type="radio" name="candidate" value="Jericho Carlos">
-            <div class="candidate-content">
-              <img src="images/candidate6.jpg" alt="Jericho Carlos">
-              <div class="candidate-details">
-                <h3>Jericho Carlos</h3>
-                <p>Gender and Development</p>
-              </div>
-            </div>
-          </label>
-        </div>
-
-        <!-- Submit Button -->
-        <button type="submit" class="modern-btn">
-          <i class="fas fa-paper-plane"></i> Submit Vote
-        </button>
-      </form>
-      <p class="success-msg" id="message">✅ Thank you! Your vote has been recorded.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- =============== FOOTER =============== -->
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Campus e-COMELEC. All Rights Reserved.</p>
-      <div class="footer-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i></a>
-        <a href="#"><i class="fas fa-map-marker-alt"></i></a>
-      </div>  
-    </div>
+    © 2025 Campus e-COMELEC | Southern Luzon State University Lucena Campus
   </footer>
 </body>
 </html>

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus e-COMELEC</title>
-  <link rel="stylesheet" href="EComelec.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="EComelec.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<script src="main.js"></script> 
 <body>
-  <!-- Navigai-->
+  <!-- Navigation -->
   <nav>
     <div class="logo">
-      <img src="images/comelec.png" alt="e-COMELEC Logo">
+      <img src="images/comelec.png" alt="e-COMELEC Logo" />
       <div class="logo-text">
         <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
         <span class="commission">COMMISSION ON ELECTION</span>
@@ -26,13 +25,13 @@
       <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
     </ul>
   </nav>
-    <!-- Sliding Announcement Bar -->
-  <div class="sliding-announcement" id="slidingAnnouncement">
-    <div class="sliding-announcement-track" id="slidingAnnouncementTrack">
+
+  <!-- Sliding Announcement -->
+  <div class="sliding-announcement">
+    <div class="sliding-announcement-track">
       <span>Voting Starts on October 10! &nbsp;|&nbsp; Candidate Orientation: October 8, 2:00 PM &nbsp;|&nbsp; Results Published October 13</span>
     </div>
   </div>
-
 
   <!-- Hero Section -->
   <header class="hero">
@@ -42,18 +41,16 @@
     </div>
   </header>
 
-   <!-- Democracy Section -->
-  <section class="democracy-section">
+  <!-- Democracy Section -->
+  <section class="democracy-section scroll-animate-left">
     <div class="democracy-box">
       <h2><i class="fas fa-balance-scale"></i> Democracy in Action</h2>
-      <p>
-        Democracy is the foundation of our student council. Your vote is your voice—by participating in the election, you help shape the future of our campus. Every student has the right and responsibility to be heard. Let’s work together for a fair, transparent, and inclusive election!
-      </p>
+      <p>Democracy is the foundation of our student council. Your vote is your voice—by participating in the election, you help shape the future of our campus. Every student has the right and responsibility to be heard. Let’s work together for a fair, transparent, and inclusive election!</p>
     </div>
   </section>
 
-  <!-- Announcement -->
-  <section class="announcement">
+  <!-- Announcements -->
+  <section class="announcement scroll-animate">
     <h2>Announcements</h2>
     <div class="announcement-container">
       <div class="announcement-card">
@@ -71,8 +68,8 @@
     </div>
   </section>
 
-  <!-- Election Dashboard -->
-  <section class="dashboard">
+  <!-- Dashboard -->
+  <section class="dashboard scroll-animate-right">
     <h2 class="dashboard-title"><i class="fas fa-tachometer-alt"></i> Election Status Dashboard</h2>
     <div class="dashboard-cards">
       <div class="dashboard-card">
@@ -106,22 +103,15 @@
     </div>
   </section>
 
- 
-
   <!-- About -->
-  <section class="about">
-    <h2>SLSU Lucena E-Comelec</h2>
-    <p>
-      The Campus e-COMELEC provides students with a faster, safer, and more 
-      transparent way to cast their votes during school elections. 
-      With just a few clicks, you can vote anytime, anywhere.
-    </p>
+  <section class="about scroll-animate-left">
+    <h2>SLSU Lucena E-COMELEC</h2>
+    <p>The Campus e-COMELEC provides students with a faster, safer, and more transparent way to cast their votes during school elections. With just a few clicks, you can vote anytime, anywhere.</p>
   </section>
 
-
   <!-- Upcoming Events -->
-  <section class="upcoming">
-    <h2>Upcoming Event</h2>
+  <section class="upcoming scroll-animate-right">
+    <h2>Upcoming Events</h2>
     <div class="upcoming-container">
       <div class="upcoming-card">
         <h3>Candidacy for AY. 2026-2027</h3>
@@ -133,13 +123,13 @@
         <h3>Leadership Seminar</h3>
         <p><strong>Date:</strong> TBA</p>
         <p><strong>Venue:</strong> TBA</p>
-        <p>Stay tuned for the upcoming Seminar.</p>
+        <p>Stay tuned for the upcoming seminar.</p>
       </div>
     </div>
   </section>
 
   <!-- Officers -->
-  <section class="officers">
+  <section class="officers scroll-animate">
     <h2>COMELEC OFFICERS AND ADVISER</h2>
     <div class="officer-container">
       <div class="officer-card"><h3>Jeric Rea</h3><p>Chairperson</p></div>
@@ -152,7 +142,7 @@
   </section>
 
   <!-- Selection -->
-  <section class="selection">
+  <section class="selection scroll-animate-left">
     <h2>Running for Candidacy</h2>
     <div class="selection-container">
       <div class="selection-box">
@@ -168,7 +158,7 @@
     </div>
   </section>
 
-  <section class="selection">
+  <section class="selection scroll-animate-right">
     <h2>Vote and Candidate</h2>
     <div class="selection-container">
       <div class="selection-box">
@@ -200,5 +190,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+  <script src="animation.js"></script>
 </body>
 </html>
