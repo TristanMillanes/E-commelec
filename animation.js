@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   function handleScroll() {
-    const triggerBottom = window.innerHeight * 0.8;
+    const triggerBottom = window.innerHeight * 1.0
+    ;
 
     animatedElements.forEach((el) => {
       const boxTop = el.getBoundingClientRect().top;

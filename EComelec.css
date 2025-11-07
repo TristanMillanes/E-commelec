@@ -121,40 +121,16 @@
     padding: 0.7rem 0.7rem;
   }
 }
-/* Sliding Announcement Bar */
-.sliding-announcement {
-  width: 100%;
-  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-  height: 2.3em;
-  display: flex;
-  align-items: center;
-  z-index: 1000;
-  font-size: 1.08em;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
-}
-.sliding-announcement-track {
-  display: inline-block;
-  white-space: nowrap;
-  will-change: transform;
-  padding-left: 100vw;
-  transform: translateX(0);
-  transition: none;
-}
-/* Navigation Sliding Box Animation */
 /* Modernized Navigation Sliding Box Animation */
 .nav-slide-box {
   position: absolute;
-  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
-  border-radius: 14px;
+  background: linear-gradient(90deg, #4b0073 0%,   #42a5f5 100%);
+  border-radius: 15px;
   pointer-events: none;
   transition: all 0.33s cubic-bezier(.4,2,.6,1);
   z-index: 1;
   opacity: 0;
-  box-shadow: 0 4px 18px 0 rgba(25, 118, 210, 0.18);
+  box-shadow: 0 15px 18px 0 rgba(25, 118, 210, 0.18);
   border: 2px solid #fff;
 }
 nav ul li a {
@@ -179,7 +155,7 @@ nav ul li a {
   padding: 2.5rem 0 2rem 0;
 }
 .democracy-box {
-  background: #fff;
+  background: #d0f406;
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(25, 118, 210, 0.10);
   padding: 2.2rem 2rem 2rem 2rem;
@@ -528,11 +504,13 @@ nav ul li a:hover {
 .announcement {
   padding: 40px 20px;
   text-align: center;
-  background: linear-gradient(to right, #f0e5ff, #fff8dc);
+  background: linear-gradient(to right, #7014f1, #e3b706);
 }
 .announcement h2 {
-  color: #6a0dad;
-  margin-bottom: 25px;
+  color: #1565c0;
+  font-family: Arial;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 .announcement-container {
   display: grid;
@@ -557,7 +535,7 @@ nav ul li a:hover {
 .officers {
   padding: 60px 20px;
   background: linear-gradient(to bottom, #f9f9f9, #eef2ff);
-  text-align: center;
+   text-align: center;
 }
 .officers h2 {
   margin-bottom: 40px;
@@ -595,7 +573,7 @@ nav ul li a:hover {
 .selection {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(to right, #d9f907, #f5f5ff);
+  background: linear-gradient(to right, #fafafa, #f5f5ff);
 }
 .selection h2 {
   margin-bottom: 40px;
@@ -610,10 +588,10 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 .selection-box {
-  background: #fff;
+  background: #ffffff;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .selection-box:hover {
@@ -626,7 +604,7 @@ nav ul li a:hover {
 }
 .selection-box a {
   display: inline-block;
-  color: #fff;
+  color: #ffffff;
   background: #6a0dad;
   padding: 15px 16px;
   border-radius: 10px;
