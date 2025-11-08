@@ -1,6 +1,6 @@
 /* Modern About Page Styles */
 .about-hero {
-  background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+  background: linear-gradient(90deg, rgba(186, 85, 211, 0.5), rgba(78, 84, 200, 0.7)),linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
   color: #fff;
   padding: 3rem 0 2rem 0;
   text-align: center;
