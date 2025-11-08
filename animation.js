@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add scroll listene and run once at load
+  // Add scroll listener and run once at load
   window.addEventListener("scroll", handleScroll);
   handleScroll();
 });
