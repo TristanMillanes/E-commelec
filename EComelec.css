@@ -40,6 +40,7 @@
   width: 100%;
 }
 
+/* Left: Democracy Box */
 .democracy-box {
   flex: 1;
   background: linear-gradient(135deg, rgba(147,112,219,0.9), rgba(186,85,211,0.9));
@@ -49,6 +50,7 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
+/* Right: Announcement Box */
 .announcement-box {
   flex: 0.8;
   background: #fff;
@@ -56,8 +58,8 @@
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  max-height: 250px; /* fixed height */
-  overflow-y: auto; /* scroll when content exceeds height */
+  overflow: hidden;
+  position: relative;
 }
 
 .announcement-box h3 {
@@ -65,27 +67,33 @@
   margin-bottom: 1rem;
 }
 
-.announcement-content p {
+/* Scrolling ticker */
+.announcement-ticker {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.announcement-ticker ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation: scrollUp 12s linear infinite;
+}
+
+.announcement-ticker li {
   color: #333;
   font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  padding: 0.6rem 0;
 }
 
-.announcement-content a {
-  color: #6a0dad;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.announcement-content a:hover {
-  text-decoration: underline;
-}
-
-.no-announcement {
-  color: #777;
-  font-style: italic;
-  text-align: center;
+/* Animation for auto scroll */
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-25%); }
+  50% { transform: translateY(-50%); }
+  75% { transform: translateY(-75%); }
+  100% { transform: translateY(-100%); }
 }
 
 .announcement-box {
