@@ -25,6 +25,59 @@
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+.democracy-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.democracy-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.democracy-box {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(147,112,219,0.9), rgba(186,85,211,0.9));
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.announcement-box {
+  flex: 0.8;
+  background: #fff;
+  border-left: 5px solid #8f5cf7;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.announcement-box h3 {
+  color: #6a0dad;
+  margin-bottom: 1rem;
+}
+
+.announcement-content p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.announcement-content a {
+  color: #6a0dad;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.announcement-content a:hover {
+  text-decoration: underline;
+}
 .about-cards {
   display: flex;
   flex-wrap: wrap;
