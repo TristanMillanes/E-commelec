@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apply for Candidacy - Campus e-COMELEC</title>
-  <link rel="stylesheet" href="EComelec.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="main.js"></script>
+  <title>Candidacy | Campus e-COMELEC</title>
+  
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="vote.css">
 </head>
+
 <body>
-  <!-- Navigation -->
+  
+
   <nav>
     <div class="logo">
       <img src="images/comelec.png" alt="e-COMELEC Logo">
@@ -18,69 +21,96 @@
         <span class="commission">COMMISSION ON ELECTION</span>
       </div>
     </div>
+
     <ul>
-      <li><a href="EComelec.html"><i class="fas fa-home"></i>Home</a></li>
-      <li><a href="About.html"><i class="fas fa-info-circle"></i>About</a></li>
-      <li><a href="#"><i class="fas fa-vote-yea"></i>Vote</a></li>
-      <li><a href="result.html"><i class="fas fa-chart-bar"></i>Results</a></li>
-      <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+      <li><a href="EComelec.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="vote.html"><i class="fas fa-vote-yea"></i> Vote</a></li>
+      <li><a href="result.html"><i class="fas fa-chart-bar"></i> Results</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Header -->
-  <header class="hero-form">
-    <div class="hero-form-text">
-      <h1>Apply for Candidacy</h1>
-      <p>Submit your application to run for student government elections.</p>
-    </div>
-  </header>
+  <!-- Candidacy Form -->
+  <div class="container">
+    <h1>Campus Candidacy Form</h1>
+    <p>Fill out the form below to register as a candidate.</p>
 
-  <!-- Modern Form Section -->
-  <section class="candidacy-form-modern">
-    <div class="form-container">
-      <h2 class="form-title">Candidacy Application Form</h2>
-      <form action="#" method="post" class="modern-form">
-        <div class="modern-form-group">
-          <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
-          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
-        </div>
-        <div class="modern-form-group">
-          <label for="idnumber"><i class="fas fa-id-card"></i> Student ID</label>
-          <input type="text" id="idnumber" name="idnumber" placeholder="Enter your student ID" required>
-        </div>
-        <div class="modern-form-group">
-          <label for="course"><i class="fas fa-graduation-cap"></i> Course & Year</label>
-          <input type="text" id="course" name="course" placeholder="e.g. BSIT 3rd Year" required>
-        </div>
-        <div class="modern-form-group">
-          <label for="position"><i class="fas fa-briefcase"></i> Desired Position</label>
-          <select id="position" name="position" required>
-            <option value="">-- Select Position --</option>
-            <option value="Senator">Senator</option>
-            <option value="Governor">Governor</option>
-            <option value="Vice Governor">Vice Governor</option>
-            <option value="Secretary">Secretary</option>
-            <option value="CH For Finance and IGP">CH For Finance and IGP</option>
-            <option value="Auditor">Auditor</option>
-            <option value="PIO">Public Information Officer</option>
-            <option value="Representative">Representative</option>
-          </select>
-        </div>
-        <button type="submit" class="modern-submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
-      </form>
-    </div>
-  </section>
+    <form id="candidacyForm">
+      <label for="studentName">Full Name</label>
+      <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" required>
 
-  <!-- Footer -->
+      <label for="studentEmail">Student Email</label>
+      <input type="email" id="studentEmail" name="studentEmail" placeholder="Enter your email" required>
+
+      <label for="position">Position You Are Running For</label>
+      <select id="position" name="position" required>
+        <option value="" disabled selected>Choose position</option>
+        <option value="President">President</option>
+        <option value="Vice President">Vice President</option>
+        <option value="Secretary">Secretary</option>
+        <option value="Treasurer">Treasurer</option>
+        <option value="Auditor">Auditor</option>
+      </select>
+
+      <button type="submit">
+        <i class="fas fa-paper-plane"></i> Submit Candidacy
+      </button>
+    </form>
+  </div>
+
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Campus e-COMELEC. All Rights Reserved.</p>
-      <div class="footer-icons">
-        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-        <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i> Email</a>
-        <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
-      </div>
-    </div>
+    © 2025 Campus e-COMELEC | Southern Luzon State University Lucena Campus
   </footer>
+
+  <script type="module">
+// fcandidacy.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
+  authDomain: "e-commelec.firebaseapp.com",
+  databaseURL: "https://e-commelec-default-rtdb.firebaseio.com",
+  projectId: "e-commelec",
+  storageBucket: "e-commelec.firebasestorage.app",
+  messagingSenderId: "334086674865",
+  appId: "1:334086674865:web:63766c30fd3e9a032e8590",
+  measurementId: "G-9JQ5FGVVFL"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// Form submission
+document.getElementById("candidacyForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("studentName").value;
+  const email = document.getElementById("studentEmail").value;
+  const position = document.getElementById("position").value;
+
+  const candidateRef = ref(db, "candidacy/");
+  const newCandidateRef = push(candidateRef);
+
+  set(newCandidateRef, {
+    name: name,
+    email: email,
+    position: position,
+    timestamp: new Date().toISOString()
+  })
+  .then(() => {
+    alert("Candidacy submitted successfully!");
+    document.getElementById("candidacyForm").reset();
+  })
+  .catch(error => {
+    alert("Error submitting data: " + error);
+  });
+});
+
+
+  </script>
 </body>
 </html>

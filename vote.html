@@ -14,7 +14,6 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="vote.css" />
 </head>
-
 <body>
   <!-- =============== NAVIGATION =============== -->
   <nav>
@@ -42,7 +41,7 @@
     <div class="vote-form">
       <h2>Vote for Your Candidate</h2>
 
-      <form>
+      <form id="voteForm">
         <label for="studentName">Full Name</label>
         <input type="text" id="studentName" placeholder="Enter your full name" required>
 
@@ -52,19 +51,11 @@
         <label for="position">Select Position</label>
         <select id="position" required>
           <option value="" disabled selected>Choose position</option>
-          <option value="President">President</option>
-          <option value="Vice President">Vice President</option>
-          <option value="Secretary">Secretary</option>
-          <option value="Treasurer">Treasurer</option>
-          <option value="Auditor">Auditor</option>
         </select>
 
         <label for="candidate">Select Candidate</label>
         <select id="candidate" required>
           <option value="" disabled selected>Choose candidate</option>
-          <option value="Candidate1">Candidate 1</option>
-          <option value="Candidate2">Candidate 2</option>
-          <option value="Candidate3">Candidate 3</option>
         </select>
 
         <button type="submit"><i class="fas fa-paper-plane"></i> Submit Vote</button>
@@ -76,5 +67,8 @@
   <footer>
     © 2025 Campus e-COMELEC | Southern Luzon State University Lucena Campus
   </footer>
+
+  <!-- Firebase logic -->
+  <script type="module" src="#"></script>
 </body>
 </html>
