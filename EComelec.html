@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus e-COMELEC</title>
   <link rel="stylesheet" href="EComelec.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <!-- Navigation -->
@@ -47,7 +46,7 @@
 
     <!-- Right: Announcement Box -->
     <div class="announcement-box">
-      <h3><i class="fas fa-bullhorn"></i> Latest Announcements</h3>
+      <h3><i class="fas fa-bullhorn"></i> LATEST ANNOUNCEMENTS AND UPCOMING EVENT</h3>
       <div class="announcement-ticker">
         <ul id="announcementList">
           <li>📭 No new announcements at the moment.</li>
@@ -57,25 +56,6 @@
 
   </div>
 </section>
-
-  <!-- Announcements -->
-  <section class="announcement scroll-animate">
-    <h2>Announcements</h2>
-    <div class="announcement-container">
-      <div class="announcement-card">
-        <h3>Voting Starts on October 10</h3>
-        <p>All registered students can vote online from October 10 to October 12.</p>
-      </div>
-      <div class="announcement-card">
-        <h3>Candidate Orientation</h3>
-        <p>Orientation for all official candidates will be on October 8 at 2:00 PM.</p>
-      </div>
-      <div class="announcement-card">
-        <h3>Result Announcement</h3>
-        <p>Election results will be published on October 13 via the official website.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- Dashboard -->
   <section class="dashboard scroll-animate-right">
@@ -201,8 +181,81 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="main.js"></script>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
+  authDomain: "e-commelec.firebaseapp.com",
+  databaseURL: "https://e-commelec-default-rtdb.firebaseio.com",
+  projectId: "e-commelec",
+  storageBucket: "e-commelec.firebasestorage.app",
+  messagingSenderId: "334086674865",
+  appId: "1:334086674865:web:63766c30fd3e9a032e8590"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const announcementList = document.getElementById('announcementList');
+
+// Store announcements
+let announcements = [];
+let currentIndex = 0;
+
+// Load announcements from Firebase
+onValue(ref(db, "announcements"), (snapshot) => {
+  announcements = [];
+
+  if (!snapshot.exists()) {
+    announcements.push("📭 No new announcements at the moment.");
+  } else {
+    const data = snapshot.val();
+    Object.keys(data).forEach(id => {
+      announcements.push("📢 " + data[id].text);
+    });
+  }
+
+  startTicker();
+});
+
+// Function to start fade-in fade-out ticker
+function startTicker() {
+  announcementList.innerHTML = "";
+
+  if (announcements.length === 0) return;
+
+  // Create li elements
+  announcements.forEach(text => {
+    const li = document.createElement("li");
+    li.textContent = text;
+    announcementList.appendChild(li);
+  });
+
+  const items = announcementList.querySelectorAll("li");
+
+  // Hide all initially
+  items.forEach(li => li.style.opacity = 0);
+
+  function showNext() {
+    // Hide previous
+    items.forEach(li => li.style.opacity = 0);
+
+    // Show current
+    items[currentIndex].style.opacity = 1;
+
+    // Next index
+    currentIndex = (currentIndex + 5) % items.length;
+
+    // Repeat
+    setTimeout(showNext, 5000); // Change every 3 seconds
+  }
+
+  showNext();
+}
+</script>
   <script src="animation.js"></script>
-  <script src="firebase.js"></script>
 </body>
 </html>
