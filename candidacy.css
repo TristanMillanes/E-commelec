@@ -73,78 +73,73 @@
 .form-landscape {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 2rem;
-  padding: 3rem;
+  padding: 3rem 5%;
   flex-wrap: wrap;
 }
 
-/* Left: Requirements Section */
+/* Requirements Section (Left) */
 .requirements-section {
   flex: 1;
-  background-color: #f5f0ff;
+  background: #f8f6ff;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  max-height: 500px;            /* Limit height */
-  overflow-y: auto;             /* Scroll when content exceeds height */
-  scrollbar-width: thin;        /* For Firefox */
-  scrollbar-color: #a68eff #f5f0ff; /* Purple scrollbar style */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow-y: auto;
+  max-height: 600px;
 }
 
-/* Scrollbar styling (Chrome, Edge, etc.) */
-.requirements-section::-webkit-scrollbar {
-  width: 8px;
-}
-.requirements-section::-webkit-scrollbar-track {
-  background: #f5f0ff;
-  border-radius: 10px;
-}
-.requirements-section::-webkit-scrollbar-thumb {
-  background-color: #a68eff;
-  border-radius: 10px;
-}
-
-/* Heading */
 .requirements-section h2 {
-  color: #5a4fcf;
+  color: #4b2ee6;
   margin-bottom: 1rem;
   text-align: center;
 }
 
-/* List */
 .requirements-section ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding-left: 0;
 }
 
 .requirements-section li {
-  background: rgba(255,255,255,0.8);
-  margin-bottom: 0.8rem;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
+  margin-bottom: 0.75rem;
   font-size: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
-/* Right: Form */
+.requirements-section li i {
+  color: #6c45ff;
+  margin-right: 0.5rem;
+}
+
+/* Candidacy Form Section (Right) */
 .candidacy-form-modern {
-  flex: 2;
+  flex: 1;
   background: #fff;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-height: 600px;
+  overflow-y: auto;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .form-landscape {
-    flex-direction: column;
-  }
-  .requirements-section {
-    max-height: none;
-  }
+/* Download Button */
+.download-btn {
+  background-color: #7b5cf0;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: #5d3be9;
+  transform: translateY(-2px);
 }
