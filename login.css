@@ -1,0 +1,171 @@
+
+/* ===========================
+   e-COMELEC Login Page Styles
+   Author: Glycel Lorica
+   =========================== */
+
+/* ---- Base Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #e6f0ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---- Login Container ---- */
+.login-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  padding: 40px 35px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Title ---- */
+.login-container h1 {
+  color: #1d3557;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.login-container p {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* ---- Form Styling ---- */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #495057;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dce3f0;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #0b6cf5;
+  box-shadow: 0 0 0 3px rgba(11, 108, 245, 0.1);
+}
+
+/* ---- Button ---- */
+.login-btn {
+  background: #0b6cf5;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #094fc4;
+}
+
+.login-btn:disabled {
+  background: #b8d0fa;
+  cursor: not-allowed;
+}
+
+/* ---- Error Message ---- */
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 15px;
+  min-height: 18px;
+}
+
+/* ---- Footer ---- */
+.footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #adb5bd;
+}
+
+/* ---- Optional Logo ---- */
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 25px;
+  }
+
+  .login-container h1 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+}
+
+/* ---- Background Decorations (optional aesthetic) ---- */
+body::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: rgba(11, 108, 245, 0.1);
+  border-radius: 50%;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 193, 7, 0.1);
+  border-radius: 50%;
+}
