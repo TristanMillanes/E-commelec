@@ -3,58 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>e-COMELEC | Login</title>
-  <link rel="stylesheet" href="/public/css/EComelec.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
+  <title>e-COMELEC Login & Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* --- Page-specific styles for login page --- */
-    body {
+    /* ===========================
+       e-COMELEC Login & Sign Up Styles
+       Author: Glycel Lorica
+       =========================== */
+
+    /* ---- Base Reset ---- */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #e6f0ff, #ffffff);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      position: relative;
     }
 
+    /* ---- Login Container ---- */
     .login-container {
       background: #ffffff;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      padding: 40px 35px;
-      max-width: 400px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       width: 90%;
+      max-width: 400px;
+      padding: 40px 35px;
       text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
     }
 
-    .login-container h1 {
-      margin-bottom: 20px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- Tabs ---- */
+    .tab-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #e9ecef;
+    }
+
+    .tab-buttons button {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
       font-weight: 600;
-      color: #1d3557;
-    }
-
-    .login-container p {
-      font-size: 14px;
       color: #6c757d;
-      margin-bottom: 30px;
+      cursor: pointer;
+      transition: color 0.3s ease, border-color 0.3s ease;
     }
 
+    .tab-buttons button.active {
+      color: #0b6cf5;
+      border-bottom: 3px solid #0b6cf5;
+    }
+
+    /* ---- Form Styling ---- */
     .form-group {
       text-align: left;
       margin-bottom: 20px;
     }
 
     .form-group label {
-      display: block;
       font-size: 14px;
       color: #495057;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
+      display: block;
     }
 
     .form-group input {
@@ -63,14 +89,16 @@
       border-radius: 8px;
       border: 1px solid #dce3f0;
       font-size: 15px;
+      transition: all 0.2s ease;
       outline: none;
-      transition: border 0.2s ease;
     }
 
     .form-group input:focus {
       border-color: #0b6cf5;
+      box-shadow: 0 0 0 3px rgba(11, 108, 245, 0.1);
     }
 
+    /* ---- Button ---- */
     .login-btn {
       background: #0b6cf5;
       color: #ffffff;
@@ -88,129 +116,140 @@
       background: #094fc4;
     }
 
+    /* ---- Error Message ---- */
     .error-message {
-      margin-top: 15px;
       color: #dc3545;
       font-size: 14px;
+      margin-top: 15px;
       min-height: 18px;
     }
 
+    /* ---- Footer ---- */
     .footer {
       margin-top: 30px;
       font-size: 13px;
       color: #adb5bd;
     }
 
+    /* ---- Optional Logo ---- */
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    /* ---- Responsive ---- */
     @media (max-width: 480px) {
       .login-container {
         padding: 30px 25px;
       }
-      .login-container h1 {
-        font-size: 22px;
+
+      .tab-buttons button {
+        font-size: 14px;
       }
+    }
+
+    /* ---- Background Decorations ---- */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: rgba(11, 108, 245, 0.1);
+      border-radius: 50%;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 193, 7, 0.1);
+      border-radius: 50%;
+    }
+
+    /* Hide inactive forms */
+    .form-section {
+      display: none;
+    }
+
+    .form-section.active {
+      display: block;
     }
   </style>
 </head>
 <body>
   <div class="login-container">
-    <h1>Campus e-COMELEC</h1>
-    <p>Secure Login Portal</p>
+    <img src="logo.png" alt="e-COMELEC Logo" class="logo" />
+    <h1>Welcome to e-COMELEC</h1>
 
-    <form id="loginForm" method="POST" action="/login" novalidate>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Enter your username"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Enter your password"
-          required
-        />
-      </div>
-
-      <input type="hidden" id="csrfToken" name="_csrf" value="" />
-
-      <button type="submit" class="login-btn" id="btnLogin">Sign In</button>
-
-      <div id="msg" class="error-message"></div>
-    </form>
-
-    <div class="footer">
-      © <span id="year"></span> Campus e-COMELEC. All rights reserved.
+    <div class="tab-buttons">
+      <button id="loginTab" class="active">Login</button>
+      <button id="signupTab">Sign Up</button>
     </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="form-section active">
+      <div class="form-group">
+        <label for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required />
+      </div>
+      <button class="login-btn">Login</button>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div id="signupForm" class="form-section">
+      <div class="form-group">
+        <label for="signupName">Full Name</label>
+        <input type="text" id="signupName" placeholder="Enter your full name" required />
+      </div>
+      <div class="form-group">
+        <label for="signupEmail">Email Address</label>
+        <input type="email" id="signupEmail" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" placeholder="Create a password" required />
+      </div>
+      <div class="form-group">
+        <label for="signupConfirm">Confirm Password</label>
+        <input type="password" id="signupConfirm" placeholder="Re-enter your password" required />
+      </div>
+      <button class="login-btn">Sign Up</button>
+    </div>
+
+    <p class="footer">© 2025 e-COMELEC. All Rights Reserved.</p>
   </div>
 
   <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Tab switching logic
+    const loginTab = document.getElementById("loginTab");
+    const signupTab = document.getElementById("signupTab");
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
 
-    // --- Login Form JS (AJAX with CSRF token) ---
-    (async () => {
-      const msg = document.getElementById("msg");
-      const btn = document.getElementById("btnLogin");
+    loginTab.addEventListener("click", () => {
+      loginTab.classList.add("active");
+      signupTab.classList.remove("active");
+      loginForm.classList.add("active");
+      signupForm.classList.remove("active");
+    });
 
-      // Fetch CSRF token
-      async function getCsrf() {
-        try {
-          const res = await fetch("/csrf-token", { credentials: "same-origin" });
-          if (!res.ok) return null;
-          const data = await res.json();
-          return data.csrfToken;
-        } catch {
-          return null;
-        }
-      }
-
-      const token = await getCsrf();
-      if (token) document.getElementById("csrfToken").value = token;
-
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          msg.textContent = "";
-          btn.disabled = true;
-
-          const username = document.getElementById("username").value.trim();
-          const password = document.getElementById("password").value;
-
-          if (!username || !password) {
-            msg.textContent = "Please enter both username and password.";
-            btn.disabled = false;
-            return;
-          }
-
-          try {
-            const res = await fetch("/login", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ username, password }),
-              credentials: "same-origin",
-            });
-            const data = await res.json();
-            if (!data.ok) {
-              msg.textContent = data.message || "Invalid login credentials.";
-              btn.disabled = false;
-              return;
-            }
-            window.location.href = data.redirect || "/dashboard";
-          } catch (err) {
-            msg.textContent = "Network error. Please try again.";
-            btn.disabled = false;
-          }
-        });
-    })();
+    signupTab.addEventListener("click", () => {
+      signupTab.classList.add("active");
+      loginTab.classList.remove("active");
+      signupForm.classList.add("active");
+      loginForm.classList.remove("active");
+    });
   </script>
 </body>
 </html>
