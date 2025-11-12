@@ -114,14 +114,24 @@
 }
 
 /* Candidacy Form Section (Right) */
-.candidacy-form-modern {
-  flex: 1;
-  background: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  max-height: 600px;
-  overflow-y: auto;
+.candidacy-form-modern { 
+  border: 1px solid #e8e7f5; 
+  box-sizing: border-box; 
+}
+
+/* Inner rectangular box */
+.candidacy-rect-box{
+  width:100%;
+  aspect-ratio:3/2;
+  min-height:160px;
+  background:#fafaff;
+  border:2px dashed #7b5cf0;
+  border-radius:12px;
+  padding:1rem;
+  display:grid;
+  place-items:center;
+  color:#5d5a88;
+  margin-top:1rem;
 }
 
 /* Download Button */
@@ -143,3 +153,6 @@
   background-color: #5d3be9;
   transform: translateY(-2px);
 }
+
+/* Optional: fixed height instead of aspect-ratio */
+/* .candidacy-rect-box { height: 200px; aspect-ratio: auto; } */
