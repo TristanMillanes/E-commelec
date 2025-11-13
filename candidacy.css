@@ -73,65 +73,97 @@
 .form-landscape {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 2rem;
   padding: 3rem 5%;
   flex-wrap: wrap;
 }
 
-/* Requirements Section (Left) */
+/* Requirements Section (Left) – card/modal style */
 .requirements-section {
-  flex: 1;
-  background: #f8f6ff;
-  border-radius: 12px;
+  flex: 1 1 320px;
+  background: #ffffff;
+  border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  border: 1px solid rgba(75, 46, 230, 0.12);
   overflow-y: auto;
   max-height: 600px;
 }
 
 .requirements-section h2 {
   color: #4b2ee6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
+.requirements-section h2 i {
+  font-size: 1.2rem;
+}
+
+/* Requirements list as cards */
 .requirements-section ul {
   list-style: none;
   padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
 }
 
 .requirements-section li {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
+  background: #faf9ff;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
+  font-size: 1rem;
+  border-left: 4px solid #6c45ff;
 }
 
 .requirements-section li i {
   color: #6c45ff;
-  margin-right: 0.5rem;
+  margin-right: 0.6rem;
+  font-size: 1.1rem;
 }
 
-/* Candidacy Form Section (Right) */
+/* 2-column layout for requirements on large screens (optional) */
+@media (min-width: 992px) {
+  .requirements-section ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Candidacy Form Section (Right) – card style */
 .candidacy-form-modern { 
+  flex: 1 1 320px;
+  background: #ffffff;
+  border-radius: 16px;
   border: 1px solid #e8e7f5; 
   box-sizing: border-box; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  padding: 2rem;
 }
 
-/* Inner rectangular box */
+/* Inner rectangular box with fixed size */
 .candidacy-rect-box{
-  width:100%;
-  aspect-ratio:3/2;
-  min-height:160px;
-  background:#fafaff;
-  border:2px dashed #7b5cf0;
-  border-radius:12px;
-  padding:1rem;
-  display:grid;
-  place-items:center;
-  color:#5d5a88;
-  margin-top:1rem;
+  width: 100%;
+  height: 220px;        /* 👈 fixed rectangle height */
+  /* or use min-height: 220px; if you want it to grow with content */
+
+  background: #fafaff;
+  border: 2px dashed #7b5cf0;
+  border-radius: 12px;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  color: #5d5a88;
+  margin-top: 1rem;
 }
 
 /* Download Button */
@@ -153,6 +185,3 @@
   background-color: #5d3be9;
   transform: translateY(-2px);
 }
-
-/* Optional: fixed height instead of aspect-ratio */
-/* .candidacy-rect-box { height: 200px; aspect-ratio: auto; } */
