@@ -18,22 +18,33 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #0066cc;
-  padding: 12px 30px;
+  background: linear-gradient(90deg, #ffd700, #4b0073);
+  padding: 10px 20px;
+  color: #fff;
 }
 
-.logo {
+nav .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: bold;
 }
 
-.logo img {
-  height: 40px;
-  width: auto;
+nav .logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+nav .logo-text .university {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav .logo-text .commission {
+  font-size: 12px;
 }
 
 nav ul {
@@ -46,21 +57,14 @@ nav ul li {
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
   transition: 0.3s;
 }
 
-nav ul li a:hover {
-  background: #004c99;
-}
-
+nav ul li a:hover,
 nav ul li a.active {
-  background: #ffcc00;
-  color: #333;
+  color: #ffd700;
 }
 
 /* Results Section */

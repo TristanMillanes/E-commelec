@@ -20,12 +20,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, #ffd700, #4b0073);
-  padding: 10px 30px;
+  padding: 10px 20px;
   color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
 nav .logo {
@@ -34,51 +30,42 @@ nav .logo {
 }
 
 nav .logo img {
-  height: 55px;
+  height: 50px;
   margin-right: 10px;
 }
 
 nav .logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
 }
 
 nav .logo-text .university {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 14px;
-  letter-spacing: 0.5px;
 }
 
 nav .logo-text .commission {
   font-size: 12px;
-  font-weight: 500;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  align-items: center;
 }
 
 nav ul li {
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 nav ul li a {
   color: #fff;
-  font-weight: 600;
-  text-decoration: none;
+  font-weight: bold;
   transition: 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #ffeb3b;
-  text-decoration: underline;
+  color: #ffd700;
 }
 
 /* =============== PAGE CONTENT =============== */

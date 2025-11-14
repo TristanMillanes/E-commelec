@@ -1,21 +1,112 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom, #f4f6f9, #e8eaf6);
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #ffd700, #4b0073);
+  padding: 10px 20px;
+  color: #fff;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+nav .logo-text .university {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav .logo-text .commission {
+  font-size: 12px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffd700;
+}
+
+/* Hero Section */
+.hero-form {
+  background: linear-gradient(90deg, rgba(186, 85, 211, 0.5), rgba(78, 84, 200, 0.7)),linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+  color: #fff;
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(78,84,200,0.08);
+}
+
+.hero-form h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero-form p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
 /* Candidacy Form Section */
 .candidacy-form {
   max-width: 650px;
   margin: 50px auto;
   padding: 30px;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .candidacy-form h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: #004080;
-  font-size: 24px;
-  border-bottom: 2px solid #004080;
-  display: inline-block;
-  padding-bottom: 5px;
+  color: #1a237e;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
 }
 
 .candidacy-form form {
@@ -25,37 +116,41 @@
 }
 
 .form-group label {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 6px;
   display: block;
-  color: #333;
+  color: #1976d2;
+  font-size: 1rem;
 }
 
 .form-group i {
   margin-right: 6px;
-  color: #004080;
+  color: #4e54c8;
 }
 
 .candidacy-form input,
 .candidacy-form select {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
+  padding: 0.7em 1em;
+  border: 1.5px solid #b0bec5;
   border-radius: 8px;
   font-size: 15px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+  background: #f4f6fb;
+  outline: none;
 }
 
 .candidacy-form input:focus,
 .candidacy-form select:focus {
-  border-color: #004080;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px #e3f2fd;
   outline: none;
 }
 
 .candidacy-form button {
   margin-top: 20px;
   padding: 14px;
-  background: #004080;
+  background: #4e54c8;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -63,10 +158,13 @@
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 2px 8px rgba(78, 84, 200, 0.2);
 }
 
 .candidacy-form button:hover {
-  background: #0066cc;
+  background: #42a5f5;
+  box-shadow: 0 4px 16px rgba(66, 165, 245, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Landscape layout for Requirements + Form */
@@ -77,6 +175,8 @@
   gap: 2rem;
   padding: 3rem 5%;
   flex-wrap: wrap;
+  background: #f7f8fa;
+  min-height: 60vh;
 }
 
 /* Requirements Section (Left) – card/modal style */
@@ -89,10 +189,16 @@
   border: 1px solid rgba(75, 46, 230, 0.12);
   overflow-y: auto;
   max-height: 600px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.requirements-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 
 .requirements-section h2 {
-  color: #4b2ee6;
+  color: #4e54c8;
   margin-bottom: 1.5rem;
   text-align: center;
   font-size: 1.3rem;
@@ -100,6 +206,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  font-weight: 600;
 }
 
 .requirements-section h2 i {
@@ -123,11 +230,18 @@
   display: flex;
   align-items: center;
   font-size: 1rem;
-  border-left: 4px solid #6c45ff;
+  border-left: 4px solid #4e54c8;
+  transition: all 0.2s ease;
+}
+
+.requirements-section li:hover {
+  background: #f0eeff;
+  box-shadow: 0 4px 12px rgba(78, 84, 200, 0.1);
+  transform: translateX(4px);
 }
 
 .requirements-section li i {
-  color: #6c45ff;
+  color: #4e54c8;
   margin-right: 0.6rem;
   font-size: 1.1rem;
 }
@@ -148,14 +262,18 @@
   box-sizing: border-box; 
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
   padding: 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.candidacy-form-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 
 /* Inner rectangular box with fixed size */
 .candidacy-rect-box{
   width: 100%;
-  height: 220px;        /* 👈 fixed rectangle height */
-  /* or use min-height: 220px; if you want it to grow with content */
-
+  height: 220px;
   background: #fafaff;
   border: 2px dashed #7b5cf0;
   border-radius: 12px;
@@ -164,11 +282,18 @@
   place-items: center;
   color: #5d5a88;
   margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.candidacy-rect-box:hover {
+  border-color: #4e54c8;
+  background: #f5f3ff;
+  box-shadow: 0 2px 8px rgba(78, 84, 200, 0.08);
 }
 
 /* Download Button */
 .download-btn {
-  background-color: #7b5cf0;
+  background-color: #4e54c8;
   color: #fff;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -178,10 +303,142 @@
   display: block;
   margin: 1.5rem auto 0 auto;
   text-align: center;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(78, 84, 200, 0.2);
+  font-weight: 600;
 }
 
 .download-btn:hover {
-  background-color: #5d3be9;
+  background-color: #42a5f5;
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(66, 165, 245, 0.3);
+}
+
+/* Modern Form Container */
+.form-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(25, 118, 210, 0.10);
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+}
+
+.form-title {
+  text-align: center;
+  color: #1a237e;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.modern-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modern-form-group label {
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.modern-form-group input,
+.modern-form-group select {
+  padding: 0.7em 1em;
+  border: 1.5px solid #b0bec5;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f4f6fb;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.modern-form-group input:focus,
+.modern-form-group select:focus {
+  border: 1.5px solid #1976d2;
+  box-shadow: 0 0 0 2px #e3f2fd;
+}
+
+.modern-submit {
+  background: #1976d2;
+  color: #fff;
+  padding: 0.8em 2em;
+  border: none;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+}
+
+.modern-submit:hover {
+  background: #1565c0;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .form-landscape {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 3%;
+  }
+
+  .requirements-section {
+    max-width: 100%;
+    max-height: none;
+    flex: 1 1 100%;
+  }
+
+  .candidacy-form-modern {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-form h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-landscape {
+    padding: 1.5rem 2%;
+  }
+
+  .requirements-section {
+    padding: 1.2rem;
+  }
+
+  .candidacy-form-modern {
+    padding: 1.2rem;
+  }
+
+  .form-container {
+    padding: 1.2rem 0.5rem;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  nav .logo-text {
+    font-size: 10px;
+  }
 }

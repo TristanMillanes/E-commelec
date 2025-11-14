@@ -578,9 +578,11 @@ nav ul li {
 nav ul li a {
   color: #fff;
   font-weight: bold;
+  transition: 0.3s;
 }
-nav ul li a:hover {
-  text-decoration: underline;
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffd700;
 }
 
 /* Hero */

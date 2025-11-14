@@ -17,12 +17,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background: linear-gradient(90deg, #FFD700, #4b0073);
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background: linear-gradient(90deg, #ffd700, #4b0073);
+  padding: 10px 20px;
+  color: #fff;
 }
 
 nav .logo {
@@ -41,8 +38,8 @@ nav .logo-text {
 }
 
 nav .logo-text .university {
-  font-size: 14px;
   font-weight: bold;
+  font-size: 14px;
 }
 
 nav .logo-text .commission {
@@ -50,27 +47,23 @@ nav .logo-text .commission {
 }
 
 nav ul {
-  display: flex;
   list-style: none;
+  display: flex;
 }
 
 nav ul li {
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 nav ul li a {
-  color: white;
-  text-decoration: none;
+  color: #fff;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
-nav ul li a:hover {
-  color: #FFD700;
-}
-
-nav ul li a i {
-  margin-right: 6px;
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffd700;
 }
 
 /* Hero */
