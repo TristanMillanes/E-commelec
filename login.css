@@ -1,54 +1,97 @@
-body{
+/* Reset & base */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #e6f0ff, #ffffff);
+
+  /* FULL BACKGROUND IMAGE WITH PURPLE GRADIENT */
+  background: linear-gradient(rgba(128, 0, 128, 0.4), rgba(128, 0, 128, 0.4)), 
+              url("images/slsubg.jpg") no-repeat center center fixed;
+  background-size: cover;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;  /* form on the right */
+  align-items: flex-start;    /* form near top */
+  position: relative;
+  overflow: hidden;
+  padding-right: 60px;        /* spacing from right */
+  padding-top: 60px;          /* spacing from top */
+}
+
+/* ---- Large background logo with text ---- */
+.bg-logo-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  color: rgba(255, 255, 255, 0.1); /* very light and transparent */
+  font-weight: 900;
+  z-index: 1;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ---- Upper Left Logo ---- */
+.page-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* ---- Login Container ---- */
 .login-container {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92); /* Slight transparency */
+  backdrop-filter: blur(6px);
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   width: 90%;
   max-width: 400px;
   padding: 40px 35px;
   text-align: center;
   animation: fadeIn 0.8s ease-in-out;
+  position: relative;
+  z-index: 5;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---- Title ---- */
-.login-container h1 {
-  color: #1d3557;
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 10px;
+/* ---- Tabs ---- */
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e9ecef;
 }
 
-.login-container p {
+.tab-buttons button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
   color: #6c757d;
-  font-size: 14px;
-  margin-bottom: 30px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-buttons button.active {
+  color: #0b6cf5;
+  border-bottom: 3px solid #0b6cf5;
 }
 
 /* ---- Form Styling ---- */
@@ -97,19 +140,6 @@ body {
   background: #094fc4;
 }
 
-.login-btn:disabled {
-  background: #b8d0fa;
-  cursor: not-allowed;
-}
-
-/* ---- Error Message ---- */
-.error-message {
-  color: #dc3545;
-  font-size: 14px;
-  margin-top: 15px;
-  min-height: 18px;
-}
-
 /* ---- Footer ---- */
 .footer {
   margin-top: 30px;
@@ -117,16 +147,15 @@ body {
   color: #adb5bd;
 }
 
-/* ---- Optional Logo ---- */
-.logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
 /* ---- Responsive ---- */
 @media (max-width: 480px) {
+  html, body {
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
   .login-container {
     padding: 30px 25px;
   }
@@ -140,25 +169,190 @@ body {
   }
 }
 
-/* ---- Background Decorations (optional aesthetic) ---- */
-body::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 200px;
-  height: 200px;
-  background: rgba(11, 108, 245, 0.1);
-  border-radius: 50%;
+/* Hide inactive forms */
+.form-section {
+  display: none;
 }
 
-body::after {
-  content: "";
+.form-section.active {
+  display: block;
+}
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+
+  /* FULL BACKGROUND IMAGE WITH PURPLE GRADIENT */
+  background: linear-gradient(rgba(128, 0, 128, 0.4), rgba(128, 0, 128, 0.4)), 
+              url("images/slsubg.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  display: flex;
+  justify-content: flex-end;  /* form on the right */
+  align-items: flex-start;    /* form near top */
+  position: relative;
+  overflow: hidden;
+  padding-right: 60px;        /* spacing from right */
+  padding-top: 60px;          /* spacing from top */
+}
+
+/* ---- Large background logo with text ---- */
+.bg-logo-text {
   position: absolute;
-  bottom: -80px;
-  left: -80px;
-  width: 250px;
-  height: 250px;
-  background: rgba(255, 193, 7, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  color: rgba(255, 255, 255, 0.1); /* very light and transparent */
+  font-weight: 900;
+  z-index: 1;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ---- Upper Left Logo ---- */
+.page-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ---- Login Container ---- */
+.login-container {
+  background: rgba(255, 255, 255, 0.92); /* Slight transparency */
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  padding: 40px 35px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+  position: relative;
+  z-index: 5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Tabs ---- */
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.tab-buttons button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-buttons button.active {
+  color: #0b6cf5;
+  border-bottom: 3px solid #0b6cf5;
+}
+
+/* ---- Form Styling ---- */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #495057;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dce3f0;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #0b6cf5;
+  box-shadow: 0 0 0 3px rgba(11, 108, 245, 0.1);
+}
+
+/* ---- Button ---- */
+.login-btn {
+  background: #0b6cf5;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #094fc4;
+}
+
+/* ---- Footer ---- */
+.footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #adb5bd;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  html, body {
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  .login-container {
+    padding: 30px 25px;
+  }
+
+  .login-container h1 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+}
+
+/* Hide inactive forms */
+.form-section {
+  display: none;
+}
+
+.form-section.active {
+  display: block;
 }
