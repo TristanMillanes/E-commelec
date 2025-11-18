@@ -17,7 +17,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #4b0082;
+  background: linear-gradient(90deg, #ffd700, #4b0073);
   padding: 10px 20px;
   color: #fff;
 }
@@ -35,31 +35,32 @@ nav .logo img {
 nav .logo-text {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
 }
 
 nav .logo-text .university {
   font-weight: bold;
-  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav .logo-text .commission {
+  font-size: 12px;
 }
 
 nav ul {
-  display: flex;
   list-style: none;
+  display: flex;
 }
 
 nav ul li {
-  margin: 0 10px;
+  margin-left: 20px;
 }
 
 nav ul li a {
   color: #fff;
-  text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
 
-nav ul li a:hover,
 nav ul li a.active {
   color: #ffd700;
 }

@@ -29,41 +29,5 @@ document.addEventListener('DOMContentLoaded', function() {
       slideBox.style.opacity = 0;
     });
   }
-
-  // Sliding announcement bar animation (JavaScript version)
-  const track = document.getElementById('slidingAnnouncementTrack');
-  const bar = document.getElementById('slidingAnnouncement');
-  if (track && bar) {
-    let pos = bar.offsetWidth;
-    const textWidth = track.offsetWidth;
-    let animFrame;
-    function animate() {
-      pos -= 5; // Increase speed (was pos--)
-      if (pos < -textWidth) {
-        pos = bar.offsetWidth;
-      }
-      track.style.transform = `translateX(${pos}px)`;
-      animFrame = requestAnimationFrame(animate);
-    }
-
-    // Show/hide logic for every 2 minutes
-    function showAnnouncement() {
-      bar.style.display = 'flex';
-      // Reset position so text slides in from the right every time
-      pos = bar.offsetWidth;
-      track.style.transform = `translateX(${pos}px)`;
-      // Start animation on next frame to ensure bar is visible
-      setTimeout(() => {
-        animate();
-      }, 10);
-      setTimeout(hideAnnouncement, 28000); // Show for 15 seconds
-    }
-    function hideAnnouncement() {
-      bar.style.display = 'none';
-      cancelAnimationFrame(animFrame);
-      setTimeout(showAnnouncement, 20000); // 
-    }
-    // Start the cycle
-    hideAnnouncement();
-  }
+  
 });

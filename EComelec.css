@@ -1,6 +1,6 @@
 /* Modern About Page Styles */
 .about-hero {
-  background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+  background: linear-gradient(90deg, rgba(186, 85, 211, 0.5), rgba(78, 84, 200, 0.7)),linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
   color: #fff;
   padding: 3rem 0 2rem 0;
   text-align: center;
@@ -24,6 +24,113 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+.democracy-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.democracy-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Left: Democracy Box */
+.democracy-box {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(147,112,219,0.9), rgba(186,85,211,0.9));
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Right: Announcement Box */
+.announcement-box {
+  flex: 0.8;
+  background: #fff;
+  border-left: 5px solid #8f5cf7;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.announcement-ticker {
+  position: relative;
+  height: 40px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.announcement-ticker li {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+  list-style: none;
+  font-size: 16px;
+}
+
+
+.announcement-box h3 {
+  color: #6a0dad;
+  margin-bottom: 1rem;
+}
+
+/* Scrolling ticker */
+.announcement-ticker {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.announcement-ticker ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation: scrollUp 12s linear infinite;
+}
+
+.announcement-ticker li {
+  color: #333;
+  font-size: 1rem;
+  padding: 0.6rem 0;
+}
+
+.announcement-box {
+  flex: 0.8;
+  background: #fff;
+  border-left: 5px solid #8f5cf7;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.announcement-box h3 {
+  color: #6a0dad;
+  margin-bottom: 1rem;
+}
+
+.announcement-content p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.announcement-content a {
+  color: #6a0dad;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.announcement-content a:hover {
+  text-decoration: underline;
 }
 .about-cards {
   display: flex;
@@ -121,40 +228,16 @@
     padding: 0.7rem 0.7rem;
   }
 }
-/* Sliding Announcement Bar */
-.sliding-announcement {
-  width: 100%;
-  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-  height: 2.3em;
-  display: flex;
-  align-items: center;
-  z-index: 1000;
-  font-size: 1.08em;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
-}
-.sliding-announcement-track {
-  display: inline-block;
-  white-space: nowrap;
-  will-change: transform;
-  padding-left: 100vw;
-  transform: translateX(0);
-  transition: none;
-}
-/* Navigation Sliding Box Animation */
 /* Modernized Navigation Sliding Box Animation */
 .nav-slide-box {
   position: absolute;
-  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
-  border-radius: 14px;
+  background: linear-gradient(90deg, #4b0073 0%,   #42a5f5 100%);
+  border-radius: 15px;
   pointer-events: none;
   transition: all 0.33s cubic-bezier(.4,2,.6,1);
   z-index: 1;
   opacity: 0;
-  box-shadow: 0 4px 18px 0 rgba(25, 118, 210, 0.18);
+  box-shadow: 0 15px 18px 0 rgba(25, 118, 210, 0.18);
   border: 2px solid #fff;
 }
 nav ul li a {
@@ -179,7 +262,7 @@ nav ul li a {
   padding: 2.5rem 0 2rem 0;
 }
 .democracy-box {
-  background: #fff;
+  background: #d0f406;
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(25, 118, 210, 0.10);
   padding: 2.2rem 2rem 2rem 2rem;
@@ -495,9 +578,11 @@ nav ul li {
 nav ul li a {
   color: #fff;
   font-weight: bold;
+  transition: 0.3s;
 }
-nav ul li a:hover {
-  text-decoration: underline;
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffd700;
 }
 
 /* Hero */
@@ -528,11 +613,13 @@ nav ul li a:hover {
 .announcement {
   padding: 40px 20px;
   text-align: center;
-  background: linear-gradient(to right, #f0e5ff, #fff8dc);
+  background: linear-gradient(to right, #7014f1, #e3b706);
 }
 .announcement h2 {
-  color: #6a0dad;
-  margin-bottom: 25px;
+  color: #1565c0;
+  font-family: Arial;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 .announcement-container {
   display: grid;
@@ -557,7 +644,7 @@ nav ul li a:hover {
 .officers {
   padding: 60px 20px;
   background: linear-gradient(to bottom, #f9f9f9, #eef2ff);
-  text-align: center;
+   text-align: center;
 }
 .officers h2 {
   margin-bottom: 40px;
@@ -595,7 +682,7 @@ nav ul li a:hover {
 .selection {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(to right, #d9f907, #f5f5ff);
+  background: linear-gradient(to right, #fafafa, #f5f5ff);
 }
 .selection h2 {
   margin-bottom: 40px;
@@ -610,10 +697,10 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 .selection-box {
-  background: #fff;
+  background: #ffffff;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .selection-box:hover {
@@ -626,7 +713,7 @@ nav ul li a:hover {
 }
 .selection-box a {
   display: inline-block;
-  color: #fff;
+  color: #ffffff;
   background: #6a0dad;
   padding: 15px 16px;
   border-radius: 10px;
@@ -700,4 +787,39 @@ footer {
 }
 .footer-icons i {
   margin-right: 6px;
+}
+/* ===========================
+   Scroll Animation Styles
+=========================== */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease-out;
+}
+
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.9s ease-out;
+}
+
+.scroll-animate-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.9s ease-out;
+}
+
+.scroll-animate-right.show {
+  opacity: 1;
+  transform: translateX(0);
 }

@@ -1,78 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus e-COMELEC</title>
-  <link rel="stylesheet" href="EComelec.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="EComelec.css" />
 </head>
-<script src="main.js"></script> 
 <body>
-  <!-- Navigai-->
+  <!-- Navigation -->
   <nav>
     <div class="logo">
-      <img src="images/comelec.png" alt="e-COMELEC Logo">
+      <img src="images/comelec.png" alt="e-COMELEC Logo" />
       <div class="logo-text">
         <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
         <span class="commission">COMMISSION ON ELECTION</span>
       </div>
     </div>
     <ul>
-      <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+      <li><a href="EComelec.html"><i class="fas fa-home"></i>Home</a></li>
       <li><a href="About.html"><i class="fas fa-info-circle"></i>About</a></li>
       <li><a href="vote.html"><i class="fas fa-vote-yea"></i>Vote</a></li>
       <li><a href="result.html"><i class="fas fa-chart-bar"></i>Results</a></li>
       <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
     </ul>
   </nav>
-    <!-- Sliding Announcement Bar -->
-  <div class="sliding-announcement" id="slidingAnnouncement">
-    <div class="sliding-announcement-track" id="slidingAnnouncementTrack">
-      <span>Voting Starts on October 10! &nbsp;|&nbsp; Candidate Orientation: October 8, 2:00 PM &nbsp;|&nbsp; Results Published October 13</span>
-    </div>
-  </div>
 
 
   <!-- Hero Section -->
-  <header class="hero">
+  <header class="hero" style="background: url('https://scontent.fmnl45-2.fna.fbcdn.net/v/t1.15752-9/576924060_3259962320828474_5454061542768521315_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEHGDwS21fSg2mn8D0yi9knGOY0oJcvQE8Y5jSgly9AT5orbPIQm1EtTwMqRp4EYqsX07Yj52yzaqo7T--HIhWW&_nc_ohc=cgCiGNR78OUQ7kNvwF5bGLk&_nc_oc=AdmjV2GVSQ6uTpybzq1FACjeYqq68emTuLNZEz2KjA0taTsMDR3Yid9q8CKs4CMm6Cii9S9g2hMalka1Hr-O3Qzt&_nc_zt=23&_nc_ht=scontent.fmnl45-2.fna&oh=03_Q7cD3wEHlvIgjxKJLW2mSqJC3sbK1wRAsIDPM7sEPZrBWRebjw&oe=69369CD7') no-repeat center center/cover;">
     <div class="hero-text">
       <h1>WELCOME TO COMMISSION ON ELECTION</h1>
       <p>THE E-COMELEC OF SOUTHERN LUZON STATE UNIVERSITY LUCENA</p>
     </div>
   </header>
 
-   <!-- Democracy Section -->
-  <section class="democracy-section">
+<!-- Democracy Section -->
+<section class="democracy-section scroll-animate-left">
+  <div class="democracy-container">
+    
+    <!-- Left: Democracy Box -->
     <div class="democracy-box">
       <h2><i class="fas fa-balance-scale"></i> Democracy in Action</h2>
-      <p>
-        Democracy is the foundation of our student council. Your vote is your voice—by participating in the election, you help shape the future of our campus. Every student has the right and responsibility to be heard. Let’s work together for a fair, transparent, and inclusive election!
-      </p>
+      <p>Democracy is the foundation of our student council. Your vote is your voice—by participating in the election, you help shape the future of our campus. Every student has the right and responsibility to be heard. Let’s work together for a fair, transparent, and inclusive election!</p>
     </div>
-  </section>
 
-  <!-- Announcement -->
-  <section class="announcement">
-    <h2>Announcements</h2>
-    <div class="announcement-container">
-      <div class="announcement-card">
-        <h3>Voting Starts on October 10</h3>
-        <p>All registered students can vote online from October 10 to October 12.</p>
-      </div>
-      <div class="announcement-card">
-        <h3>Candidate Orientation</h3>
-        <p>Orientation for all official candidates will be on October 8 at 2:00 PM.</p>
-      </div>
-      <div class="announcement-card">
-        <h3>Result Announcement</h3>
-        <p>Election results will be published on October 13 via the official website.</p>
+    <!-- Right: Announcement Box -->
+    <div class="announcement-box">
+      <h3><i class="fas fa-bullhorn"></i> LATEST ANNOUNCEMENTS AND UPCOMING EVENT</h3>
+      <div class="announcement-ticker">
+        <ul id="announcementList">
+          <li>📭 No new announcements at the moment.</li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- Election Dashboard -->
-  <section class="dashboard">
+  </div>
+</section>
+
+  <!-- Dashboard -->
+  <section class="dashboard scroll-animate-right">
     <h2 class="dashboard-title"><i class="fas fa-tachometer-alt"></i> Election Status Dashboard</h2>
     <div class="dashboard-cards">
       <div class="dashboard-card">
@@ -106,22 +92,15 @@
     </div>
   </section>
 
- 
-
   <!-- About -->
-  <section class="about">
-    <h2>SLSU Lucena E-Comelec</h2>
-    <p>
-      The Campus e-COMELEC provides students with a faster, safer, and more 
-      transparent way to cast their votes during school elections. 
-      With just a few clicks, you can vote anytime, anywhere.
-    </p>
+  <section class="about scroll-animate-left">
+    <h2>SLSU Lucena E-COMELEC</h2>
+    <p>The Campus e-COMELEC provides students with a faster, safer, and more transparent way to cast their votes during school elections. With just a few clicks, you can vote anytime, anywhere.</p>
   </section>
 
-
   <!-- Upcoming Events -->
-  <section class="upcoming">
-    <h2>Upcoming Event</h2>
+  <section class="upcoming scroll-animate-right">
+    <h2>Upcoming Events</h2>
     <div class="upcoming-container">
       <div class="upcoming-card">
         <h3>Candidacy for AY. 2026-2027</h3>
@@ -133,13 +112,13 @@
         <h3>Leadership Seminar</h3>
         <p><strong>Date:</strong> TBA</p>
         <p><strong>Venue:</strong> TBA</p>
-        <p>Stay tuned for the upcoming Seminar.</p>
+        <p>Stay tuned for the upcoming seminar.</p>
       </div>
     </div>
   </section>
 
   <!-- Officers -->
-  <section class="officers">
+  <section class="officers scroll-animate">
     <h2>COMELEC OFFICERS AND ADVISER</h2>
     <div class="officer-container">
       <div class="officer-card"><h3>Jeric Rea</h3><p>Chairperson</p></div>
@@ -152,7 +131,7 @@
   </section>
 
   <!-- Selection -->
-  <section class="selection">
+  <section class="selection scroll-animate-left">
     <h2>Running for Candidacy</h2>
     <div class="selection-container">
       <div class="selection-box">
@@ -168,7 +147,7 @@
     </div>
   </section>
 
-  <section class="selection">
+  <section class="selection scroll-animate-right">
     <h2>Vote and Candidate</h2>
     <div class="selection-container">
       <div class="selection-box">
@@ -179,7 +158,7 @@
       <div class="selection-box">
         <h3>Results</h3>
         <p>View transparent and real-time election results.</p>
-        <a href="result.html">Go</a>
+        <a href="result.html">Goo</a>
       </div>
       <div class="selection-box">
         <h3>Candidate</h3>
@@ -200,5 +179,83 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
+  authDomain: "e-commelec.firebaseapp.com",
+  databaseURL: "https://e-commelec-default-rtdb.firebaseio.com",
+  projectId: "e-commelec",
+  storageBucket: "e-commelec.firebasestorage.app",
+  messagingSenderId: "334086674865",
+  appId: "1:334086674865:web:63766c30fd3e9a032e8590"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const announcementList = document.getElementById('announcementList');
+
+// Store announcements
+let announcements = [];
+let currentIndex = 0;
+
+// Load announcements from Firebase
+onValue(ref(db, "announcements"), (snapshot) => {
+  announcements = [];
+
+  if (!snapshot.exists()) {
+    announcements.push("📭 No new announcements at the moment.");
+  } else {
+    const data = snapshot.val();
+    Object.keys(data).forEach(id => {
+      announcements.push("📢 " + data[id].text);
+    });
+  }
+
+  startTicker();
+});
+
+// Function to start fade-in fade-out ticker
+function startTicker() {
+  announcementList.innerHTML = "";
+
+  if (announcements.length === 0) return;
+
+  // Create li elements
+  announcements.forEach(text => {
+    const li = document.createElement("li");
+    li.textContent = text;
+    announcementList.appendChild(li);
+  });
+
+  const items = announcementList.querySelectorAll("li");
+
+  // Hide all initially
+  items.forEach(li => li.style.opacity = 0);
+
+  function showNext() {
+    // Hide previous
+    items.forEach(li => li.style.opacity = 0);
+
+    // Show current
+    items[currentIndex].style.opacity = 1;
+
+    // Next index
+    currentIndex = (currentIndex + 5) % items.length;
+
+    // Repeat
+    setTimeout(showNext, 5000); // Change every 3 seconds
+  }
+
+  showNext();
+}
+</script>
+  <script src="animation.js"></script>
 </body>
 </html>

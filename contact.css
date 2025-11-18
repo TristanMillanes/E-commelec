@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-* {
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,7 +11,7 @@ body {
   color: #333;
 }
 
-/* Navigation (same as your site) */
+/* Navigation (same as candidacy) */
 nav {
   display: flex;
   justify-content: space-between;
@@ -54,7 +53,7 @@ nav ul li a {
 }
 nav ul li a:hover,
 nav ul li a.active {
-  text-decoration: underline;
+  color: #ffd700;
 }
 
 /* Contact Section */

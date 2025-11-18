@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Campus e-COMELEC</title>
   <link rel="stylesheet" href="contact.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+
 <body>
   <!-- Navigation -->
   <nav>
@@ -20,7 +19,7 @@
     <ul>
       <li><a href="EComelec.html"><i class="fas fa-home"></i>Home</a></li>
       <li><a href="About.html"><i class="fas fa-info-circle"></i>About</a></li>
-      <li><a href="#"><i class="fas fa-vote-yea"></i>Vote</a></li>
+      <li><a href="vote.html"><i class="fas fa-vote-yea"></i>Vote</a></li>
       <li><a href="result.html"><i class="fas fa-chart-bar"></i>Results</a></li>
       <li><a class="active" href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
     </ul>
@@ -35,14 +34,14 @@
       <!-- Contact Info -->
       <div class="contact-info">
         <h3>Get in Touch</h3>
-        <p><i class="fa-solid fa-location-dot"></i> SLS Campus, Lucena City, Philippines</p>
-        <p><i class="fa-solid fa-envelope"></i> info@slsecomelec.edu</p>
+        <p><i class="fa-solid fa-location-dot"></i> Southern Luzon State University Lucena Campus, Lucena City, Philippines</p>
+        <p><i class="fa-solid fa-envelope"></i> ComelecSLSULC@gmail.com</p>
         <p><i class="fa-solid fa-phone"></i> +63 912 345 6789</p>
       </div>
 
       <!-- Contact Form -->
       <div class="contact-form">
-        <form action="#" method="post">
+        <form id="contactForm">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -71,5 +70,57 @@
       </div>
     </div>
   </footer>
+
+  <!-- Firebase Scripts -->
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
+      authDomain: "e-commelec.firebaseapp.com",
+      databaseURL: "https://e-commelec-default-rtdb.firebaseio.com",
+      projectId: "e-commelec",
+      storageBucket: "e-commelec.firebasestorage.app",
+      messagingSenderId: "334086674865",
+      appId: "1:334086674865:web:63766c30fd3e9a032e8590",
+      measurementId: "G-9JQ5FGVVFL"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Handle contact form submission
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = form.name.value;
+      const email = form.email.value;
+      const message = form.message.value;
+
+      // Reference to "contacts" in Firebase
+      const contactRef = ref(db, 'contacts/');
+      const newContactRef = push(contactRef);
+
+      // Save data
+      set(newContactRef, {
+        name,
+        email,
+        message,
+        timestamp: new Date().toISOString()
+      })
+      .then(() => {
+        alert('Your message has been sent successfully!');
+        form.reset();
+      })
+      .catch((error) => {
+        alert('Error sending message: ' + error);
+      });
+    });
+  </script>
 </body>
 </html>
