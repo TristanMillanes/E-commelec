@@ -1,0 +1,178 @@
+/* ===========================
+   CANDIDATE PAGE STYLES
+   Uses variables from EComelec.css
+=========================== */
+
+.hero-candidates {
+  background: linear-gradient(135deg, rgba(106, 13, 173, 0.9), #ffd700b8);
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-candidates .hero-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.3rem;
+}
+
+/* Candidate section */
+.candidates {
+  background: var(--bg-page);
+  padding: 3.2rem 0 4.2rem;
+}
+
+.candidates-inner {
+  max-width: var(--container-width);
+  margin: auto;
+  padding: 0 1.3rem;
+}
+
+.candidates-title {
+  text-align: center;
+  color: #1e40af;
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+  font-weight: 800;
+}
+
+.candidates-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.8rem;
+}
+
+/* Groups container */
+.candidate-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2.1rem;
+}
+
+/* Group */
+.candidate-group-title {
+  color: #3b0764;
+  font-size: 1.1rem;
+  margin-bottom: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Grid of cards */
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.3rem;
+}
+
+/* Card */
+.candidate-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid #dadbf5;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+  transition: 0.25s ease;
+}
+
+.candidate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
+}
+
+/* Avatar */
+.candidate-avatar {
+  width: 62px;
+  height: 62px;
+  background: #e8efff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.candidate-avatar i {
+  font-size: 1.7rem;
+  color: #1e3a8a;
+}
+
+/* Text */
+.candidate-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.candidate-position {
+  font-size: 0.9rem;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Extra info (party / section) */
+.candidate-meta {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.candidate-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.15);
+  color: #374151;
+}
+
+.candidate-tag i {
+  font-size: 0.72rem;
+}
+
+/* Loading text */
+.loading-text {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-candidates {
+    min-height: 220px;
+  }
+
+  .candidate-group-title {
+    font-size: 1rem;
+  }
+
+  .candidate-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .candidates {
+    padding-top: 2.7rem;
+    padding-bottom: 3.8rem;
+  }
+
+  .candidates-title {
+    font-size: 1.45rem;
+  }
+
+  .candidates-subtitle {
+    font-size: 0.9rem;
+  }
+}

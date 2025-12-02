@@ -4,150 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vote | Campus e-COMELEC</title>
-<<<<<<< HEAD
-  <link rel="stylesheet" href="EComelec.css">
+
+  <link rel="stylesheet" href="vote.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="main.js" defer></script>
-=======
-
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="vote.css" />
->>>>>>> c46edbff51d1b0b32340d90a4c82f8cb7dd733d2
 </head>
+
 <body>
-  <!-- =============== NAVIGATION =============== -->
+  <!-- ========================================================= -->
+  <!-- Navigation (aligned with other pages: EComelec, About, etc) -->
+  <!-- ========================================================= -->
   <nav>
-    <div class="logo">
-      <img src="images/comelec.png" alt="e-COMELEC Logo" />
-      <div class="logo-text">
-        <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
-        <span class="commission">COMMISSION ON ELECTION</span>
+    <div class="inner">
+      <div class="logo">
+        <img src="images/comelec.png" alt="e-COMELEC Logo" />
+        <div class="logo-text">
+          <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
+          <span class="commission">COMMISSION ON ELECTION</span>
+        </div>
       </div>
+
+      <ul>
+        <li><a href="EComelec.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="vote.html" class="active"><i class="fas fa-vote-yea"></i> Vote</a></li>
+        <li><a href="result.html"><i class="fas fa-chart-bar"></i> Results</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+
+        <!-- Profile Menu -->
+        <li class="profile-menu">
+          <i id="profileBtn" class="fas fa-user-circle"></i>
+
+          <div id="profileDropdown" class="dropdown">
+            <p id="userName">Loading...</p>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li><a href="EComelec.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a href="vote.html" class="active"><i class="fas fa-vote-yea"></i> Vote</a></li>
-      <li><a href="result.html"><i class="fas fa-chart-bar"></i> Results</a></li>
-      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
   </nav>
 
-<<<<<<< HEAD
-  <!-- Sliding Announcement -->
-  <div class="sliding-announcement" id="slidingAnnouncement">
-    <div class="sliding-announcement-track" id="slidingAnnouncementTrack">
-      <span>Voting Starts on October 10! &nbsp;|&nbsp; Candidate Orientation: October 8, 2:00 PM &nbsp;|&nbsp; Results Published October 13</span>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <header class="hero vote-hero">
-    <div class="hero-text">
-      <h1>CAST YOUR VOTE</h1>
-      <p>Make your voice heard — your vote shapes the future of SLSU Lucena!</p>
+  <!-- ========================================================= -->
+  <!-- Voting Hero -->
+  <!-- ========================================================= -->
+  <header class="vote-hero scroll-animate">
+    <div class="vote-hero-inner">
+      <span class="hero-pill">
+        <i class="fas fa-ballot-check"></i>
+        Campus e-COMELEC Voting Portal
+      </span>
+      <div class="vote-hero-content">
+        <h1>Cast Your Vote Securely and Transparently</h1>
+        <p>
+          Review each candidate carefully and select your choice. Your vote will be
+          recorded securely in the Campus e-COMELEC system.
+        </p>
+      </div>
+      <div class="hero-badges">
+        <span><i class="fas fa-lock"></i> Secure System</span>
+        <span><i class="fas fa-eye"></i> Transparent Process</span>
+        <span><i class="fas fa-users"></i> Student Representation</span>
+      </div>
     </div>
   </header>
 
-  <!-- Voting Form -->
-  <section class="voting-section">
-    <div class="container">
-      <h2><i class="fas fa-ballot-check"></i> Fill Out and Cast Your Vote</h2>
+  <!-- ========================================================= -->
+  <!-- Voting Section -->
+  <!-- ========================================================= -->
+  <main class="vote-main">
+    <section class="voting-section scroll-animate-right">
+      <div class="voting-header">
+        <h2><i class="fas fa-ballot-check"></i> Cast Your Vote</h2>
+        <p class="voting-subtitle">
+          For each candidate, choose whether you vote <strong>Affirmative</strong>,
+          <strong>Negative</strong>, or <strong>Abstain</strong>.
+        </p>
+      </div>
 
       <form id="voteForm">
-        <!-- Voter Information -->
-        <div class="voter-info">
-          <input type="text" id="studentName" name="studentName" placeholder="Full Name" required>
-          <input type="text" id="studentID" name="studentID" placeholder="Student ID" required>
+        <div class="candidate-list" id="candidateList">
+          <!-- Candidates loaded from Realtime Database -->
         </div>
 
-        <!-- Candidate List -->
-        <div class="candidate">
-          <img src="images/candidate1.jpg" alt="Rojean Mae Clariss Baron">
-          <div class="candidate-info">
-            <h3>Rojean Mae Clariss Baron</h3>
-            <p>Platform: Education and Youth Empowerment</p>
-          </div>
-          <input type="radio" name="candidate" value="Rojean Mae Clariss Baron" required>
-        </div>
-
-        <div class="candidate">
-          <img src="images/candidate2.jpg" alt="Janet Manjares">
-          <div class="candidate-info">
-            <h3>Janet Manjares</h3>
-            <p>Platform: Senator</p>
-          </div>
-          <input type="radio" name="candidate" value="Janet Manjares">
-        </div>
-
-        <div class="candidate">
-          <img src="images/candidate3.jpg" alt="Francis Portes">
-          <div class="candidate-info">
-            <h3>Francis Portes</h3>
-            <p>Platform: Vice Governor</p>
-          </div>
-          <input type="radio" name="candidate" value="Francis Portes">
-        </div>
-
-        <div class="candidate">
-          <img src="images/candidate4.jpg" alt="Beth Sharmel Ramos">
-          <div class="candidate-info">
-            <h3>Beth Sharmel Ramos</h3>
-            <p>Platform: Culture and Arts</p>
-          </div>
-          <input type="radio" name="candidate" value="Beth Sharmel Ramos">
-        </div>
-
-        <div class="candidate">
-          <img src="images/candidate5.jpg" alt="Iyah Pornela">
-          <div class="candidate-info">
-            <h3>Iyah Pornela</h3>
-            <p>Platform: Health and Environment</p>
-          </div>
-          <input type="radio" name="candidate" value="Iyah Pornela">
-        </div>
-
-        <div class="candidate">
-          <img src="images/candidate6.jpg" alt="Jericho Carlos">
-          <div class="candidate-info">
-            <h3>Jericho Carlos</h3>
-            <p>Platform: Gender and Development</p>
-          </div>
-          <input type="radio" name="candidate" value="Jericho Carlos">
-        </div>
-
-        <!-- Submit Button -->
-        <div style="text-align:center; margin-top:25px;">
-          <button type="submit" class="vote-btn">
-            <i class="fas fa-paper-plane"></i> Submit Vote
-          </button>
-        </div>
+        <button type="submit" class="vote-btn">
+          <i class="fas fa-paper-plane"></i> Submit Vote
+        </button>
       </form>
 
-      <!-- Success Message -->
       <p class="message" id="message" style="display:none;">
         ✅ Thank you! Your vote has been recorded.
       </p>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Confirmation Modal -->
-  <div id="confirmationModal" class="modal">
-    <div class="modal-content">
-      <i class="fas fa-check-circle" style="font-size:50px; color:#27ae60;"></i>
-      <h3>Vote Submitted!</h3>
-      <p>Your vote has been successfully recorded.<br>Thank you for participating!</p>
-      <button id="closeModal">Close</button>
+  <!-- Loading overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <p id="loadingText">Processing your vote...</p>
     </div>
   </div>
 
+  <!-- ========================================================= -->
   <!-- Footer -->
+  <!-- ========================================================= -->
   <footer>
     <div class="footer-content">
       <p>&copy; 2025 Campus e-COMELEC. All Rights Reserved.</p>
@@ -157,44 +116,341 @@
         <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
       </div>
     </div>
-=======
-  <!-- =============== MAIN CONTENT =============== -->
-  <div class="container">
-    <h1>Campus Voting Page</h1>
-    <p>Please fill out the form below to cast your vote.</p>
-
-    <div class="vote-form">
-      <h2>Vote for Your Candidate</h2>
-
-      <form id="voteForm">
-        <label for="studentName">Full Name</label>
-        <input type="text" id="studentName" placeholder="Enter your full name" required>
-
-        <label for="studentEmail">Student Email</label>
-        <input type="email" id="studentEmail" placeholder="Enter your email" required>
-
-        <label for="position">Select Position</label>
-        <select id="position" required>
-          <option value="" disabled selected>Choose position</option>
-        </select>
-
-        <label for="candidate">Select Candidate</label>
-        <select id="candidate" required>
-          <option value="" disabled selected>Choose candidate</option>
-        </select>
-
-        <button type="submit"><i class="fas fa-paper-plane"></i> Submit Vote</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- =============== FOOTER =============== -->
-  <footer>
-    © 2025 Campus e-COMELEC | Southern Luzon State University Lucena Campus
->>>>>>> c46edbff51d1b0b32340d90a4c82f8cb7dd733d2
   </footer>
 
-  <!-- Firebase logic -->
-  <script type="module" src="#"></script>
+  <!-- ========================================================= -->
+  <!-- Firebase Logic (Realtime DB only) -->
+  <!-- ========================================================= -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import {
+      getDatabase,
+      ref,
+      onValue,
+      get,
+      push,
+      query,
+      orderByChild,
+      equalTo
+    } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+
+    /* ------------------------- */
+    /*  Firebase Config          */
+    /* ------------------------- */
+    const firebaseConfig = {
+      apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
+      authDomain: "e-commelec.firebaseapp.com",
+      databaseURL: "https://e-commelec-default-rtdb.firebaseio.com",
+      projectId: "e-commelec",
+      storageBucket: "e-commelec.firebasestorage.app",
+      messagingSenderId: "334086674865",
+      appId: "1:334086674865:web:63766c30fd3e9a032e8590"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const rtdb = getDatabase(app);
+
+    /* ------------------------- */
+    /*  DOM Elements             */
+    /* ------------------------- */
+    const voteForm = document.getElementById("voteForm");
+    const message = document.getElementById("message");
+    const candidateList = document.getElementById("candidateList");
+
+    const profileBtn = document.getElementById("profileBtn");
+    const profileDropdown = document.getElementById("profileDropdown");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const userNameEl = document.getElementById("userName");
+
+    const loadingOverlay = document.getElementById("loadingOverlay");
+    const loadingText = document.getElementById("loadingText");
+    const voteBtn = document.querySelector(".vote-btn");
+
+    let currentUser = null;
+    let currentUserEmail = null;
+    let candidacyData = {}; // cache
+
+    /* ------------------------- */
+    /*  LOADING HELPERS          */
+    /* ------------------------- */
+    function showLoading(text = "Processing your vote...") {
+      if (loadingText) loadingText.textContent = text;
+      loadingOverlay.classList.add("active");
+      if (voteBtn) {
+        voteBtn.disabled = true;
+        voteBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Processing...`;
+      }
+    }
+
+    function hideLoading() {
+      loadingOverlay.classList.remove("active");
+      if (voteBtn) {
+        voteBtn.disabled = false;
+        voteBtn.innerHTML = `<i class="fas fa-paper-plane"></i> Submit Vote`;
+      }
+    }
+
+    /* ------------------------- */
+    /*  LOAD LOGGED-IN USER      */
+    /* ------------------------- */
+    function loadCurrentUser() {
+      currentUserEmail = localStorage.getItem("ec_userEmail");
+
+      if (!currentUserEmail) {
+        const oldUserRaw = localStorage.getItem("loggedUser");
+        if (oldUserRaw) {
+          try {
+            const oldUser = JSON.parse(oldUserRaw);
+            if (oldUser && oldUser.email) {
+              currentUserEmail = oldUser.email;
+            }
+          } catch (err) {
+            console.error("Error parsing loggedUser:", err);
+          }
+        }
+      }
+
+      if (!currentUserEmail) {
+        alert("You must be logged in to vote.");
+        window.location.href = "login.html";
+        return;
+      }
+
+      const safeEmail = currentUserEmail.replace(/\./g, "_");
+      const userRef = ref(rtdb, "users/" + safeEmail);
+
+      get(userRef)
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            currentUser = snapshot.val();
+            userNameEl.textContent = currentUser.name || currentUserEmail;
+          } else {
+            userNameEl.textContent = currentUserEmail;
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          userNameEl.textContent = currentUserEmail;
+        });
+    }
+
+    loadCurrentUser();
+
+    /* ------------------------- */
+    /*  PROFILE DROPDOWN & LOGOUT*/
+    /* ------------------------- */
+    if (profileBtn && profileDropdown) {
+      profileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        profileDropdown.classList.toggle('active');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!profileDropdown.contains(e.target) && !profileBtn.contains(e.target)) {
+          profileDropdown.classList.remove('active');
+        }
+      });
+    }
+
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem("ec_userName");
+        localStorage.removeItem("ec_userEmail");
+        localStorage.removeItem("loggedUser");
+        window.location.href = "login.html";
+      });
+    }
+
+    /* ------------------------- */
+    /*  SAFE HELPERS             */
+    /* ------------------------- */
+    function safeName(c) {
+      if (!c) return "Unnamed Candidate";
+      if (typeof c.fullName === "string" && c.fullName.trim()) return c.fullName.trim();
+      if (typeof c.name === "string" && c.name.trim()) return c.name.trim();
+      return "Unnamed Candidate";
+    }
+
+    function safePosition(c) {
+      if (!c) return "Unknown";
+      if (typeof c.position === "string" && c.position.trim()) return c.position.trim();
+      if (typeof c.positionApplied === "string" && c.positionApplied.trim()) return c.positionApplied.trim();
+      return "Unknown";
+    }
+
+    function safeParty(c) {
+      if (!c) return "";
+      if (typeof c.party === "string" && c.party.trim()) return c.party.trim();
+      if (typeof c.partylist === "string" && c.partylist.trim()) return c.partylist.trim();
+      return "";
+    }
+
+    /* ------------------------- */
+    /*  LOAD CANDIDATES (RTDB)   */
+    /* ------------------------- */
+    function loadCandidates() {
+      const candidacyRef = ref(rtdb, "candidacy");
+
+      onValue(candidacyRef, (snapshot) => {
+        const data = snapshot.val() || {};
+        candidacyData = data;
+        candidateList.innerHTML = "";
+
+        const keys = Object.keys(data);
+        if (!keys.length) {
+          candidateList.innerHTML = "<p class='no-candidates'>No candidates found.</p>";
+          return;
+        }
+
+        keys.forEach((key) => {
+          const c = data[key] || {};
+          const candidateName = safeName(c);
+          const candidatePosition = safePosition(c);
+          const candidateParty = safeParty(c);
+
+          const positionBadge = candidatePosition !== "Unknown"
+            ? `<span class="position-badge">${candidatePosition}</span>`
+            : "";
+
+          const partyLine = candidateParty
+            ? `<p class="candidate-meta"><strong>Party:</strong> ${candidateParty}</p>`
+            : "";
+
+          const card = `
+            <article class="candidate-card">
+              <div class="card-header">
+                <div class="candidate-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+
+                <div class="candidate-main">
+                  <div class="candidate-top-row">
+                    <h3>${candidateName}</h3>
+                    ${positionBadge}
+                  </div>
+                  ${partyLine}
+                </div>
+              </div>
+
+              <div class="vote-options">
+                <label>
+                  <input type="radio" name="vote_${key}" value="affirmative" required>
+                  Affirmative
+                </label>
+                <label>
+                  <input type="radio" name="vote_${key}" value="negative">
+                  Negative
+                </label>
+                <label>
+                  <input type="radio" name="vote_${key}" value="abstain">
+                  Abstain
+                </label>
+              </div>
+            </article>
+          `;
+
+          candidateList.insertAdjacentHTML("beforeend", card);
+        });
+      });
+    }
+
+    loadCandidates();
+
+    /* ------------------------- */
+    /*  DUPLICATE VOTE CHECK     */
+    /* ------------------------- */
+    async function hasUserVoted(email) {
+      try {
+        const votesQuery = query(
+          ref(rtdb, "votes"),
+          orderByChild("userEmail"),
+          equalTo(email)
+        );
+        const snap = await get(votesQuery);
+        return snap.exists();
+      } catch (err) {
+        console.error("Duplicate check error:", err);
+        // If index/rules fail, ignore duplicate-check instead of crashing
+        return false;
+      }
+    }
+
+    /* ------------------------- */
+    /*  SUBMIT VOTE (RTDB ONLY)  */
+    /* ------------------------- */
+    voteForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (!currentUserEmail) {
+        alert("User not loaded. Please log in again.");
+        return;
+      }
+
+      if (!candidacyData || Object.keys(candidacyData).length === 0) {
+        alert("Candidates are still loading. Please try again.");
+        return;
+      }
+
+      showLoading("Processing your vote...");
+
+      try {
+        // 1) Prevent duplicate votes
+        const votedBefore = await hasUserVoted(currentUserEmail);
+        if (votedBefore) {
+          hideLoading();
+          alert("You have already voted.");
+          return;
+        }
+
+        // 2) Collect selections
+        let votesToSave = [];
+
+        Object.keys(candidacyData).forEach((key) => {
+          const selected = document.querySelector(`input[name="vote_${key}"]:checked`);
+          if (selected) {
+            const c = candidacyData[key] || {};
+            const candidateName = safeName(c);
+            const position = safePosition(c);
+
+            votesToSave.push({
+              candidateId: key || "",
+              candidateName: candidateName,
+              position: position,
+              vote: selected.value || "",
+              userEmail: currentUserEmail || "",
+              userName: (currentUser && currentUser.name)
+                ? currentUser.name
+                : (currentUserEmail || "Unknown"),
+              timestamp: new Date().toISOString()
+            });
+          }
+        });
+
+        if (!votesToSave.length) {
+          hideLoading();
+          alert("Please vote for at least one candidate.");
+          return;
+        }
+
+        // 3) Save all votes to Realtime Database
+        await Promise.all(
+          votesToSave.map((v) => push(ref(rtdb, "votes"), v))
+        );
+
+        hideLoading();
+        voteForm.reset();
+        message.textContent = "✅ Done! Your vote has been recorded.";
+        message.style.display = "block";
+
+      } catch (err) {
+        console.error("Submit error:", err);
+        hideLoading();
+        alert("Error submitting vote: " + err.message);
+      }
+    });
+  </script>
+
+  <!-- Optional scroll animation helper if you use it on other pages -->
+  <script src="animation.js"></script>
 </body>
 </html>

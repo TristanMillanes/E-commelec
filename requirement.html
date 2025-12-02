@@ -3,69 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Candidate Requirements - Campus e-COMELEC</title>
-</head>
+  <title>Candidate Requirements • Campus e-COMELEC</title>
+
+  <!-- Global styles -->
   <link rel="stylesheet" href="EComelec.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="main.js"></script>
+
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="requirement.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- Navigation (same as index) -->
-  <!-- Navigation -->
+  <!-- Navigation (same pattern as other pages, NO Candidates link) -->
   <nav>
-    <div class="logo">
-      <img src="images/comelec.png" alt="e-COMELEC Logo">
-      <div class="logo-text">
-        <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
-        <span class="commission">COMMISSION ON ELECTION</span>
+    <div class="inner">
+      <div class="logo">
+        <img src="images/comelec.png" alt="e-COMELEC Logo">
+        <div class="logo-text">
+          <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
+          <span class="commission">COMMISSION ON ELECTION</span>
+        </div>
       </div>
+
+      <ul>
+        <li><a href="EComelec.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="vote.html"><i class="fas fa-vote-yea"></i> Vote</a></li>
+        <li><a href="result.html"><i class="fas fa-chart-bar"></i> Results</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+
+        <!-- Profile -->
+        <li class="profile-menu">
+          <i id="profileBtn" class="fas fa-user-circle"></i>
+          <div id="profileDropdown" class="dropdown">
+            <p id="userName">Loading...</p>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li><a href="EComelec.html"><i class="fas fa-home"></i>Home</a></li>
-      <li><a href="About.html"><i class="fas fa-info-circle"></i>About</a></li>
-      <li><a href="#"><i class="fas fa-vote-yea"></i>Vote</a></li>
-      <li><a href="result.html"><i class="fas fa-chart-bar"></i>Results</a></li>
-      <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
-    </ul>
   </nav>
 
-  <!-- Header -->
-  <header class="hero small-hero">
-    <div class="hero-text">
-      <h1>Candidate Requirements</h1>
-      <p>Guidelines and Eligibility for Running in Campus Elections</p>
+  <!-- HERO -->
+  <header class="hero hero-requirements scroll-animate">
+    <div class="hero-inner">
+      <span class="hero-pill">
+        <i class="fas fa-file-circle-check"></i> Candidacy Guidelines
+      </span>
+      <div class="hero-text">
+        <h1>Candidate Requirements</h1>
+        <p>Guidelines and eligibility for running in the Campus Elections.</p>
+      </div>
     </div>
   </header>
 
-  <!-- Requirements Section -->
-  <section class="requirements">
-    <h2>Requirements for Candidacy</h2>
-    <div class="req-container">
-      <div class="req-card">
-        <i class="fas fa-id-card"></i>
-        <h3>Enrollment Status</h3>
-        <p>Must be a currently enrolled student of Southern Luzon State University Lucena Campus.</p>
+  <!-- REQUIREMENTS SECTION -->
+  <section class="requirements-page scroll-animate">
+    <div class="requirements-inner">
+      <div class="requirements-header">
+        <h2>General Requirements for Candidacy</h2>
+        <p class="requirements-subtitle">
+          All aspiring candidates must comply with the following requirements before filing their
+          certificate of candidacy.
+        </p>
       </div>
-      <div class="req-card">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>Academic Standing</h3>
-        <p>Candidate must not have failing grades and must maintain good academic performance.</p>
+
+      <div class="req-grid">
+        <div class="req-card">
+          <div class="req-icon">
+            <i class="fas fa-id-card"></i>
+          </div>
+          <h3>Enrollment Status</h3>
+          <p>Must be a currently enrolled student of Southern Luzon State University Lucena Campus.</p>
+        </div>
+
+        <div class="req-card">
+          <div class="req-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Academic Standing</h3>
+          <p>Must have no failing grades and maintain a satisfactory academic performance as required by the institution.</p>
+        </div>
+
+        <div class="req-card">
+          <div class="req-icon">
+            <i class="fas fa-user-check"></i>
+          </div>
+          <h3>Good Moral Character</h3>
+          <p>No record of major disciplinary cases or serious violations of university policies.</p>
+        </div>
+
+        <div class="req-card">
+          <div class="req-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Application Documents</h3>
+          <p>Must submit all prescribed candidacy forms and documentary requirements on or before the deadline.</p>
+        </div>
+
+        <div class="req-card">
+          <div class="req-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Endorsements</h3>
+          <p>Required to secure the necessary endorsement signatures from classmates, program, or organizations as specified.</p>
+        </div>
       </div>
-      <div class="req-card">
-        <i class="fas fa-user-check"></i>
-        <h3>Good Moral Character</h3>
-        <p>No record of major disciplinary actions or violations in the university.</p>
+    </div>
+  </section>
+
+  <!-- POSITIONS (DYNAMIC FROM candidacy) -->
+  <section class="positions-section scroll-animate">
+    <div class="positions-inner">
+      <div class="positions-header">
+        <h2>Positions in This Election</h2>
+        <p class="positions-subtitle">
+          List of positions with at least one candidate, based on the current candidacy records.
+        </p>
       </div>
-      <div class="req-card">
-        <i class="fas fa-file-alt"></i>
-        <h3>Application Documents</h3>
-        <p>Must submit a complete set of candidacy forms and requirements before the deadline.</p>
-      </div>
-      <div class="req-card">
-        <i class="fas fa-users"></i>
-        <h3>Endorsements</h3>
-        <p>Required to secure endorsement signatures from classmates or organizations.</p>
+
+      <div class="positions-card">
+        <div class="table-wrapper">
+          <table class="positions-table">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Number of Candidates</th>
+              </tr>
+            </thead>
+            <tbody id="positionsBody">
+              <tr>
+                <td colspan="2" class="loading-row">
+                  <i class="fas fa-spinner fa-spin"></i> Loading positions...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="positions-note">
+          <i class="fas fa-info-circle"></i>
+          Data is synchronized with the official <strong>candidacy</strong> database of e-COMELEC.
+        </p>
       </div>
     </div>
   </section>
@@ -81,5 +162,103 @@
       </div>
     </div>
   </footer>
+
+  <!-- Firebase & Dynamic Positions -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
+      authDomain: "e-commelec.firebaseapp.com",
+      databaseURL: "https://e-commelec-default-rtdb.firebaseio.com",
+      projectId: "e-commelec",
+      storageBucket: "e-commelec.firebasestorage.app",
+      messagingSenderId: "334086674865",
+      appId: "1:334086674865:web:63766c30fd3e9a032e8590"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    /* ===== PROFILE DROPDOWN ===== */
+    const profileBtn = document.getElementById("profileBtn");
+    const profileDropdown = document.getElementById("profileDropdown");
+    const userNameEl = document.getElementById("userName");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (profileBtn) {
+      profileBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        profileDropdown.classList.toggle("active");
+      });
+    }
+
+    document.addEventListener("click", (e) => {
+      if (profileDropdown &&
+          !profileDropdown.contains(e.target) &&
+          !profileBtn.contains(e.target)) {
+        profileDropdown.classList.remove("active");
+      }
+    });
+
+    const savedEmail = localStorage.getItem("ec_userEmail");
+    if (savedEmail) {
+      userNameEl.textContent = savedEmail;
+    } else {
+      userNameEl.textContent = "Not Logged In";
+    }
+
+    logoutBtn.addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "login.html";
+    });
+
+    /* ===== LOAD POSITIONS FROM candidacy ===== */
+    const candidacyRef = ref(db, "candidacy");
+
+    onValue(candidacyRef, (snapshot) => {
+      const data = snapshot.val() || {};
+      renderPositions(data);
+    });
+
+    function renderPositions(candidacyData) {
+      const tbody = document.getElementById("positionsBody");
+      tbody.innerHTML = "";
+
+      const ids = Object.keys(candidacyData || {});
+      if (!ids.length) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="2" class="loading-row">No candidacy records found.</td>
+          </tr>
+        `;
+        return;
+      }
+
+      const counts = {};
+
+      ids.forEach((id) => {
+        const c = candidacyData[id] || {};
+        const pos = c.position || "Unspecified Position";
+        if (!counts[pos]) counts[pos] = 0;
+        counts[pos]++;
+      });
+
+      const positions = Object.keys(counts).sort((a, b) => a.localeCompare(b));
+
+      positions.forEach((pos) => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${pos}</td>
+            <td>${counts[pos]}</td>
+          </tr>
+        `;
+      });
+    }
+  </script>
+
+  <!-- Optional scroll animations -->
+  <script src="animation.js"></script>
 </body>
 </html>

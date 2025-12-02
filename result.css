@@ -1,158 +1,218 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Results page styling – uses variables from EComelec.css */
+
+/* Whole section */
+.results {
+  background: var(--bg-page);
+  padding: 3.5rem 0 4.5rem;
 }
 
-/* Body */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f4f6f9;
-  color: #333;
-}
-
-/* Navigation Bar */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(90deg, #ffd700, #4b0073);
-  padding: 10px 20px;
-  color: #fff;
-}
-
-nav .logo {
-  display: flex;
-  align-items: center;
-}
-
-nav .logo img {
-  height: 50px;
-  margin-right: 10px;
-}
-
-nav .logo-text {
+.results-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
   display: flex;
   flex-direction: column;
+  gap: 1.8rem;
 }
 
-nav .logo-text .university {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-nav .logo-text .commission {
-  font-size: 12px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  margin-left: 20px;
-}
-
-nav ul li a {
-  color: #fff;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: #ffd700;
-}
-
-/* Results Section */
-.results {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+/* Header */
+.results-header {
   text-align: center;
 }
 
-.results h1 {
-  color: #0066cc;
-  margin-bottom: 20px;
+.results-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background: rgba(106, 13, 173, 0.08);
+  color: var(--primary-dark);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.8rem;
 }
 
-table {
+.results-pill i {
+  color: var(--accent);
+}
+
+.results-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a237e;
+}
+
+.results-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.results-subtitle {
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Card around table */
+.results-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 1.6rem 1.5rem 1.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.results-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.results-card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.results-card-header h3 i {
+  color: #2563eb;
+}
+
+.results-card-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.results-legend {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: rgba(148, 163, 184, 0.12);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.results-legend i {
+  font-size: 0.55rem;
+}
+
+/* Table wrapper for horizontal scroll on small screens */
+.table-wrapper {
   width: 100%;
+  margin-top: 0.5rem;
+  overflow-x: auto;
+}
+
+/* Table */
+.results-table {
+  width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
-  margin: 0 auto;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 0.92rem;
 }
 
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 12px;
+.results-table thead th {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-table th {
-  background: #0066cc;
-  color: white;
+.results-table tbody td {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-table tr:nth-child(even) {
-  background: #f9f9f9;
+.results-table tbody tr:nth-child(even) {
+  background: #f9f5ff;
 }
 
-/* Officers Section */
-.officers {
-  max-width: 900px;
-  margin: 40px auto;
+.results-table tbody tr:hover {
+  background: #eef2ff;
+}
+
+/* Loading & empty states */
+.loading-row {
   text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
-.officers h2 {
-  margin-bottom: 20px;
-  color: #0066cc;
-}
-
-.officer-list {
-  display: flex;
+/* Percentage pill */
+.percent-pill {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.officer-card {
-  background: white;
-  border-radius: 10px;
-  padding: 15px;
-  width: 200px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.officer-card:hover {
-  transform: translateY(-5px);
-}
-
-.officer-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.officer-card h3 {
-  margin: 10px 0 5px;
-}
-
-.officer-card p {
-  color: #555;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.08);
+  color: #15803d;
+  font-weight: 600;
   font-size: 0.9rem;
 }
 
-/* Footer */
-footer {
-  background: #0066cc;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
+/* Info note under table */
+.results-note {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.results-note i {
+  color: #0ea5e9;
+}
+
+/* ---------- Responsive tweaks ---------- */
+
+@media (max-width: 780px) {
+  .results-card {
+    padding: 1.3rem 1.1rem 1.2rem;
+  }
+
+  .results-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .results-table {
+    min-width: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .results-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .results-header h2 {
+    font-size: 0.9rem;
+  }
+
+  .results-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Optional: mobile-friendly stacked labels (using data-label) */
+  .results-table {
+    min-width: 480px;
+  }
 }

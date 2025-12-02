@@ -4,89 +4,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus e-COMELEC</title>
+
+  <!-- Main Styles -->
   <link rel="stylesheet" href="EComelec.css" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
+  >
 </head>
 <body>
   <!-- Navigation -->
   <nav>
-    <div class="logo">
-      <img src="images/comelec.png" alt="e-COMELEC Logo" />
-      <div class="logo-text">
-        <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
-        <span class="commission">COMMISSION ON ELECTION</span>
+    <div class="inner">
+      <div class="logo">
+        <img src="images/comelec.png" alt="e-COMELEC Logo" />
+        <div class="logo-text">
+          <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
+          <span class="commission">COMMISSION ON ELECTION</span>
+        </div>
       </div>
+
+      <ul>
+        <li><a href="EComelec.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="vote.html"><i class="fas fa-vote-yea"></i> Vote</a></li>
+        <li><a href="result.html"><i class="fas fa-chart-bar"></i> Results</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+
+        <!-- Profile Menu -->
+        <li class="profile-menu">
+          <i id="profileBtn" class="fas fa-user-circle"></i>
+          <div id="profileDropdown" class="dropdown">
+            <p id="userName">Loading...</p>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li><a href="EComelec.html"><i class="fas fa-home"></i>Home</a></li>
-      <li><a href="About.html"><i class="fas fa-info-circle"></i>About</a></li>
-      <li><a href="vote.html"><i class="fas fa-vote-yea"></i>Vote</a></li>
-      <li><a href="result.html"><i class="fas fa-chart-bar"></i>Results</a></li>
-      <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
-    </ul>
   </nav>
 
-
   <!-- Hero Section -->
-  <header class="hero" style="background: url('https://scontent.fmnl45-2.fna.fbcdn.net/v/t1.15752-9/576924060_3259962320828474_5454061542768521315_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEHGDwS21fSg2mn8D0yi9knGOY0oJcvQE8Y5jSgly9AT5orbPIQm1EtTwMqRp4EYqsX07Yj52yzaqo7T--HIhWW&_nc_ohc=cgCiGNR78OUQ7kNvwF5bGLk&_nc_oc=AdmjV2GVSQ6uTpybzq1FACjeYqq68emTuLNZEz2KjA0taTsMDR3Yid9q8CKs4CMm6Cii9S9g2hMalka1Hr-O3Qzt&_nc_zt=23&_nc_ht=scontent.fmnl45-2.fna&oh=03_Q7cD3wEHlvIgjxKJLW2mSqJC3sbK1wRAsIDPM7sEPZrBWRebjw&oe=69369CD7') no-repeat center center/cover;">
-    <div class="hero-text">
-      <h1>WELCOME TO COMMISSION ON ELECTION</h1>
-      <p>THE E-COMELEC OF SOUTHERN LUZON STATE UNIVERSITY LUCENA</p>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-pill">
+        <i class="fas fa-shield-alt"></i>
+        Digital & Transparent Campus Election
+      </span>
+      <div class="hero-text">
+        <h1>WELCOME TO COMMISSION ON ELECTION</h1>
+        <p>THE E-COMELEC OF SOUTHERN LUZON STATE UNIVERSITY LUCENA — secure, efficient, and student-centered online voting.</p>
+      </div>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="location.href='vote.html'">
+          <i class="fas fa-vote-yea"></i>
+          Cast Your Vote
+        </button>
+        <button class="btn-ghost" onclick="location.href='candidacy.html'">
+          <i class="fas fa-user-tie"></i>
+          Run for Student Council
+        </button>
+      </div>
     </div>
   </header>
 
-<!-- Democracy Section -->
-<section class="democracy-section scroll-animate-left">
-  <div class="democracy-container">
-    
-    <!-- Left: Democracy Box -->
-    <div class="democracy-box">
-      <h2><i class="fas fa-balance-scale"></i> Democracy in Action</h2>
-      <p>Democracy is the foundation of our student council. Your vote is your voice—by participating in the election, you help shape the future of our campus. Every student has the right and responsibility to be heard. Let’s work together for a fair, transparent, and inclusive election!</p>
-    </div>
+  <!-- Democracy & Announcement Section -->
+  <section class="democracy-section scroll-animate-left">
+    <div class="democracy-inner">
+      <div class="democracy-container">
+        <div class="democracy-box">
+          <h2><i class="fas fa-balance-scale"></i> Democracy in Action</h2>
+          <p>
+            Democracy is the foundation of our student council. Your vote is your voice—by participating
+            in the election, you help shape the future of our campus. Every student has the right and
+            responsibility to be heard. Let’s work together for a fair, transparent, and inclusive election!
+          </p>
+        </div>
 
-    <!-- Right: Announcement Box -->
-    <div class="announcement-box">
-      <h3><i class="fas fa-bullhorn"></i> LATEST ANNOUNCEMENTS AND UPCOMING EVENT</h3>
-      <div class="announcement-ticker">
-        <ul id="announcementList">
-          <li>📭 No new announcements at the moment.</li>
-        </ul>
+        <div class="announcement-box">
+          <span class="announcement-pill">Live announcements</span>
+          <h3><i class="fas fa-bullhorn"></i> Latest Announcements & Upcoming Events</h3>
+          <div class="announcement-ticker">
+            <ul id="announcementList">
+              <li>No new announcements at the moment.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-  <!-- Dashboard -->
+  <!-- Election Dashboard -->
   <section class="dashboard scroll-animate-right">
-    <h2 class="dashboard-title"><i class="fas fa-tachometer-alt"></i> Election Status Dashboard</h2>
-    <div class="dashboard-cards">
-      <div class="dashboard-card">
-        <div class="dashboard-icon"><i class="fas fa-users"></i></div>
-        <div class="dashboard-info">
-          <span class="dashboard-label">Total Registered Voters</span>
-          <span class="dashboard-value" id="total-voters">N/A</span>
+    <div class="dashboard-inner">
+      <h2 class="dashboard-title">
+        <i class="fas fa-tachometer-alt"></i> Election Status Dashboard
+      </h2>
+      <p class="dashboard-subtitle">
+        Real-time overview of voter registration, participation, and candidacy.
+      </p>
+      <div class="dashboard-cards">
+        <div class="dashboard-card">
+          <div class="dashboard-icon"><i class="fas fa-users"></i></div>
+          <div class="dashboard-info">
+            <span class="dashboard-label">Total Registered Voters</span>
+            <span class="dashboard-value" id="total-voters">N/A</span>
+          </div>
         </div>
-      </div>
-      <div class="dashboard-card">
-        <div class="dashboard-icon"><i class="fas fa-vote-yea"></i></div>
-        <div class="dashboard-info">
-          <span class="dashboard-label">Votes Cast</span>
-          <span class="dashboard-value" id="votes-cast">0</span>
+        <div class="dashboard-card">
+          <div class="dashboard-icon"><i class="fas fa-vote-yea"></i></div>
+          <div class="dashboard-info">
+            <span class="dashboard-label">Votes Cast</span>
+            <span class="dashboard-value" id="votes-cast">0</span>
+          </div>
         </div>
-      </div>
-      <div class="dashboard-card">
-        <div class="dashboard-icon"><i class="fas fa-user-tie"></i></div>
-        <div class="dashboard-info">
-          <span class="dashboard-label">Candidates</span>
-          <span class="dashboard-value" id="candidates">0</span>
+        <div class="dashboard-card">
+          <div class="dashboard-icon"><i class="fas fa-user-tie"></i></div>
+          <div class="dashboard-info">
+            <span class="dashboard-label">Candidates</span>
+            <span class="dashboard-value" id="candidates">0</span>
+          </div>
         </div>
-      </div>
-      <div class="dashboard-card">
-        <div class="dashboard-icon"><i class="fas fa-bullhorn"></i></div>
-        <div class="dashboard-info">
-          <span class="dashboard-label">Election Status</span>
-          <span class="dashboard-value status-open" id="election-status">TBA</span>
+        <div class="dashboard-card">
+          <div class="dashboard-icon"><i class="fas fa-bullhorn"></i></div>
+          <div class="dashboard-info">
+            <span class="dashboard-label">Election Status</span>
+            <span class="dashboard-value status-open" id="election-status">TBA</span>
+          </div>
         </div>
       </div>
     </div>
@@ -94,76 +139,91 @@
 
   <!-- About -->
   <section class="about scroll-animate-left">
-    <h2>SLSU Lucena E-COMELEC</h2>
-    <p>The Campus e-COMELEC provides students with a faster, safer, and more transparent way to cast their votes during school elections. With just a few clicks, you can vote anytime, anywhere.</p>
+    <div class="about-inner">
+      <h2>SLSU Lucena E-COMELEC</h2>
+      <p>
+        The Campus e-COMELEC provides students with a faster, safer, and more transparent way to cast
+        their votes during school elections. With just a few clicks, you can vote anytime, anywhere—
+        ensuring every voice is heard and every vote is counted.
+      </p>
+    </div>
   </section>
 
-  <!-- Upcoming Events -->
+  <!-- Upcoming Events (NOW DATABASE-DRIVEN) -->
   <section class="upcoming scroll-animate-right">
-    <h2>Upcoming Events</h2>
-    <div class="upcoming-container">
-      <div class="upcoming-card">
-        <h3>Candidacy for AY. 2026-2027</h3>
-        <p><strong>Date:</strong> TBA</p>
-        <p><strong>Venue:</strong> TBA</p>
-        <p>SSC candidacy for A.Y 2026-2027 stay tuned.</p>
-      </div>
-      <div class="upcoming-card">
-        <h3>Leadership Seminar</h3>
-        <p><strong>Date:</strong> TBA</p>
-        <p><strong>Venue:</strong> TBA</p>
-        <p>Stay tuned for the upcoming seminar.</p>
+    <div class="upcoming-inner">
+      <h2>Upcoming Events</h2>
+      <p class="upcoming-subtitle">
+        Stay updated with important election-related activities and leadership programs.
+      </p>
+
+      <div class="upcoming-container" id="upcomingContainer">
+        <!-- Filled by Firebase -->
+        <p id="noEventsMsg">No upcoming events at the moment.</p>
       </div>
     </div>
   </section>
 
-  <!-- Officers -->
-  <section class="officers scroll-animate">
-    <h2>COMELEC OFFICERS AND ADVISER</h2>
-    <div class="officer-container">
-      <div class="officer-card"><h3>Jeric Rea</h3><p>Chairperson</p></div>
-      <div class="officer-card"><h3>Mark John Wave Orig</h3><p>Vice Chairperson</p></div>
-      <div class="officer-card"><h3>Kiarra Zaide</h3><p>Secretary</p></div>
-      <div class="officer-card"><h3>Maricris Velasco</h3><p>Asst Secretary</p></div>
-      <div class="officer-card"><h3>Erica Roperez</h3><p>Finance</p></div>
-      <div class="officer-card"><h3>Princess Alyssa Lorenzo</h3><p>Public Info Officer</p></div>
-    </div>
-  </section>
-
-  <!-- Selection -->
+  <!-- Selection: Candidacy -->
   <section class="selection scroll-animate-left">
-    <h2>Running for Candidacy</h2>
-    <div class="selection-container">
-      <div class="selection-box">
-        <h3>Running for Candidacy</h3>
-        <p>Willing to serve student body</p>
-        <a href="candidacy.html">Go</a>
-      </div>
-      <div class="selection-box">
-        <h3>Candidate Requirements</h3>
-        <p>Check the requirements needed to run for office.</p>
-        <a href="requirement.html">Go</a>
+    <div class="selection-inner">
+      <h2>Running for Candidacy</h2>
+      <p class="selection-subtitle">
+        Learn how to serve the student body and start your journey as a student leader.
+      </p>
+      <div class="selection-container">
+        <div class="selection-box">
+          <h3>Running for Candidacy</h3>
+          <p>Ready to serve? Submit your candidacy and be part of the next council.</p>
+          <a href="candidacy.html">
+            Get Started
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="selection-box">
+          <h3>Candidate Requirements</h3>
+          <p>Check the qualifications and documents needed to run for office.</p>
+          <a href="requirement.html">
+            View Requirements
+            <i class="fas fa-file-alt"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Selection: Vote & Candidate -->
   <section class="selection scroll-animate-right">
-    <h2>Vote and Candidate</h2>
-    <div class="selection-container">
-      <div class="selection-box">
-        <h3>Vote for Candidacy</h3>
-        <p>Register now to cast your vote securely and conveniently.</p>
-        <a href="registration.html">Go</a>
-      </div>
-      <div class="selection-box">
-        <h3>Results</h3>
-        <p>View transparent and real-time election results.</p>
-        <a href="result.html">Goo</a>
-      </div>
-      <div class="selection-box">
-        <h3>Candidate</h3>
-        <p>Meet the official candidates running for positions.</p>
-        <a href="candidate.html">Go</a>
+    <div class="selection-inner">
+      <h2>Vote & Candidates</h2>
+      <p class="selection-subtitle">
+        Participate in the election, follow the results, and get to know your candidates.
+      </p>
+      <div class="selection-container">
+        <div class="selection-box">
+          <h3>Vote for Candidacy</h3>
+          <p>Your vote securely using the online portal.</p>
+          <a href="vote.html">
+            Register to Vote
+            <i class="fas fa-user-check"></i>
+          </a>
+        </div>
+        <div class="selection-box">
+          <h3>Results</h3>
+          <p>View transparent and updated election results as they come in.</p>
+          <a href="result.html">
+            View Results
+            <i class="fas fa-chart-line"></i>
+          </a>
+        </div>
+        <div class="selection-box">
+          <h3>Candidates</h3>
+          <p>Meet the official candidates running for various positions.</p>
+          <a href="list.html">
+            View Candidates
+            <i class="fas fa-users"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -176,86 +236,253 @@
         <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
         <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i> Email</a>
         <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
+        <li id="userMenuBtn" style="cursor:pointer;"><i class="fas fa-bars"></i></li>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Firebase + Logic -->
   <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
 
-// Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
-  authDomain: "e-commelec.firebaseapp.com",
-  databaseURL: "https://e-commelec-default-rtdb.firebaseio.com",
-  projectId: "e-commelec",
-  storageBucket: "e-commelec.firebasestorage.app",
-  messagingSenderId: "334086674865",
-  appId: "1:334086674865:web:63766c30fd3e9a032e8590"
-};
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
+      authDomain: "e-commelec.firebaseapp.com",
+      databaseURL: "https://e-commelec-default-rtdb.firebaseio.com",
+      projectId: "e-commelec",
+      storageBucket: "e-commelec.firebasestorage.app",
+      messagingSenderId: "334086674865",
+      appId: "1:334086674865:web:63766c30fd3e9a032e8590"
+    };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
 
-const announcementList = document.getElementById('announcementList');
+    // -------------------------
+    // ANNOUNCEMENTS TICKER
+    // -------------------------
+    const announcementList = document.getElementById('announcementList');
+    let announcements = [];
+    let currentIndex = 0;
+    let tickerTimeout;
 
-// Store announcements
-let announcements = [];
-let currentIndex = 0;
-
-// Load announcements from Firebase
-onValue(ref(db, "announcements"), (snapshot) => {
-  announcements = [];
-
-  if (!snapshot.exists()) {
-    announcements.push("📭 No new announcements at the moment.");
-  } else {
-    const data = snapshot.val();
-    Object.keys(data).forEach(id => {
-      announcements.push("📢 " + data[id].text);
+    onValue(ref(db, "announcements"), (snapshot) => {
+      announcements = [];
+      if (!snapshot.exists()) {
+        announcements.push("📭 No new announcements at the moment.");
+      } else {
+        const data = snapshot.val();
+        Object.keys(data).forEach(id => {
+          if (data[id] && data[id].text) {
+            announcements.push("📢 " + data[id].text);
+          }
+        });
+        if (announcements.length === 0) {
+          announcements.push("📭 No new announcements at the moment.");
+        }
+      }
+      startTicker();
     });
-  }
 
-  startTicker();
-});
+    function startTicker() {
+      announcementList.innerHTML = "";
+      clearTimeout(tickerTimeout);
+      if (announcements.length === 0) return;
 
-// Function to start fade-in fade-out ticker
-function startTicker() {
-  announcementList.innerHTML = "";
+      announcements.forEach(text => {
+        const li = document.createElement("li");
+        li.textContent = text;
+        announcementList.appendChild(li);
+      });
 
-  if (announcements.length === 0) return;
+      const items = announcementList.querySelectorAll("li");
+      items.forEach(li => (li.style.opacity = 0));
 
-  // Create li elements
-  announcements.forEach(text => {
-    const li = document.createElement("li");
-    li.textContent = text;
-    announcementList.appendChild(li);
-  });
+      currentIndex = 0;
 
-  const items = announcementList.querySelectorAll("li");
+      function showNext() {
+        items.forEach(li => (li.style.opacity = 0));
+        if (items[currentIndex]) {
+          items[currentIndex].style.opacity = 1;
+        }
+        currentIndex = (currentIndex + 1) % items.length;
+        tickerTimeout = setTimeout(showNext, 5000);
+      }
 
-  // Hide all initially
-  items.forEach(li => li.style.opacity = 0);
+      showNext();
+    }
 
-  function showNext() {
-    // Hide previous
-    items.forEach(li => li.style.opacity = 0);
+    // -------------------------
+    // DASHBOARD INFO
+    // -------------------------
+    // Total Registered Voters
+    onValue(ref(db, 'users'), (snapshot) => {
+      const users = snapshot.val() || {};
+      document.getElementById('total-voters').textContent = Object.keys(users).length;
+    });
 
-    // Show current
-    items[currentIndex].style.opacity = 1;
+    // Votes Cast
+    onValue(ref(db, 'votes'), (snapshot) => {
+      const votesData = snapshot.val();
+      let totalVotes = 0;
 
-    // Next index
-    currentIndex = (currentIndex + 5) % items.length;
+      if (typeof votesData === "number") {
+        totalVotes = votesData;
+      } else if (votesData && typeof votesData === "object") {
+        totalVotes = Object.keys(votesData).length;
+      }
 
-    // Repeat
-    setTimeout(showNext, 5000); // Change every 3 seconds
-  }
+      document.getElementById('votes-cast').textContent = totalVotes;
+    });
 
-  showNext();
-}
-</script>
+    // Candidates
+    onValue(ref(db, 'candidacy'), (snapshot) => {
+      const candidates = snapshot.val() || {};
+      document.getElementById('candidates').textContent = Object.keys(candidates).length;
+    });
+
+    // Election Status
+    onValue(ref(db, 'electionStatus'), (snapshot) => {
+      const status = snapshot.val() || 'TBA';
+      const statusEl = document.getElementById('election-status');
+      statusEl.textContent = status;
+
+      statusEl.classList.remove('status-open', 'status-closed');
+      if (String(status).toLowerCase() === 'open') {
+        statusEl.classList.add('status-open');
+      } else if (String(status).toLowerCase() === 'closed') {
+        statusEl.classList.add('status-closed');
+      }
+    });
+
+    // -------------------------
+    // UPCOMING EVENTS (READ-ONLY FROM DATABASE)
+    // -------------------------
+    const upcomingContainer = document.getElementById('upcomingContainer');
+
+    onValue(ref(db, 'upcomingEvents'), (snapshot) => {
+      // Clear current content
+      upcomingContainer.innerHTML = '';
+
+      if (!snapshot.exists()) {
+        const p = document.createElement('p');
+        p.textContent = 'No upcoming events at the moment.';
+        p.style.textAlign = 'center';
+        upcomingContainer.appendChild(p);
+        return;
+      }
+
+      const data = snapshot.val();
+      const eventIds = Object.keys(data);
+
+      if (eventIds.length === 0) {
+        const p = document.createElement('p');
+        p.textContent = 'No upcoming events at the moment.';
+        p.style.textAlign = 'center';
+        upcomingContainer.appendChild(p);
+        return;
+      }
+
+      eventIds.forEach(id => {
+        const event = data[id];
+
+        // Create card
+        const card = document.createElement('div');
+        card.classList.add('upcoming-card');
+
+        const title = document.createElement('h3');
+        title.textContent = event.title || 'Untitled Event';
+
+        const dateP = document.createElement('p');
+        dateP.innerHTML = `<strong>Date:</strong> ${event.date || 'TBA'}`;
+
+        const venueP = document.createElement('p');
+        venueP.innerHTML = `<strong>Venue:</strong> ${event.venue || 'TBA'}`;
+
+        const descP = document.createElement('p');
+        descP.textContent = event.description || 'Details will be announced soon.';
+
+        card.appendChild(title);
+        card.appendChild(dateP);
+        card.appendChild(venueP);
+        card.appendChild(descP);
+
+        upcomingContainer.appendChild(card);
+      });
+    });
+
+    // -------------------------
+    // PROFILE DROPDOWN & USER NAME
+    // -------------------------
+    const profileBtn = document.getElementById('profileBtn');
+    const profileDropdown = document.getElementById('profileDropdown');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const userNameEl = document.getElementById('userName');
+
+    if (profileBtn) {
+      profileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        profileDropdown.classList.toggle('active');
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (
+        profileDropdown &&
+        !profileDropdown.contains(e.target) &&
+        !profileBtn.contains(e.target)
+      ) {
+        profileDropdown.classList.remove('active');
+      }
+    });
+
+    // Get logged-in user email from localStorage
+    let currentUserEmail = localStorage.getItem("ec_userEmail");
+
+    // Fallback to old structure if you previously saved 'loggedUser'
+    if (!currentUserEmail) {
+      const oldUserRaw = localStorage.getItem("loggedUser");
+      if (oldUserRaw) {
+        try {
+          const oldUser = JSON.parse(oldUserRaw);
+          if (oldUser && oldUser.email) {
+            currentUserEmail = oldUser.email;
+          }
+        } catch (e) {
+          console.error("Failed to parse loggedUser:", e);
+        }
+      }
+    }
+
+    if (!currentUserEmail) {
+      userNameEl.textContent = "Not Logged In";
+    } else {
+      const safeEmail = currentUserEmail.replace(/\./g, "_");
+      const userRef = ref(db, "users/" + safeEmail);
+
+      onValue(userRef, (snapshot) => {
+        const user = snapshot.val();
+        if (user && user.name) {
+          userNameEl.textContent = user.name;
+        } else {
+          userNameEl.textContent = currentUserEmail;
+        }
+      });
+    }
+
+    // Logout
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem("ec_userName");
+      localStorage.removeItem("ec_userEmail");
+      localStorage.removeItem("loggedUser");
+      window.location.href = "login.html";
+    });
+  </script>
+
+  <!-- Your scroll animation helper if you have one -->
   <script src="animation.js"></script>
 </body>
 </html>

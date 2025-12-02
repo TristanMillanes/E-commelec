@@ -4,58 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Campus e-COMELEC</title>
+
+  <!-- Main shared styles -->
+  <link rel="stylesheet" href="EComelec.css">
+
+  <!-- Page-specific styles -->
   <link rel="stylesheet" href="contact.css">
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 <body>
+
   <!-- Navigation -->
   <nav>
-    <div class="logo">
-      <img src="images/comelec.png" alt="e-COMELEC Logo">
-      <div class="logo-text">
-        <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
-        <span class="commission">COMMISSION ON ELECTION</span>
+    <div class="inner">
+
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/comelec.png" alt="e-COMELEC Logo">
+        <div class="logo-text">
+          <span class="university">SOUTHERN LUZON STATE UNIVERSITY LUCENA</span>
+          <span class="commission">COMMISSION ON ELECTION</span>
+        </div>
       </div>
+
+      <ul>
+        <li><a href="EComelec.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="About.html"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="vote.html"><i class="fas fa-vote-yea"></i> Vote</a></li>
+        <li><a href="result.html"><i class="fas fa-chart-bar"></i> Results</a></li>
+        <li><a class="active" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+
+        <!-- Profile Dropdown -->
+        <li class="profile-menu">
+          <i id="profileBtn" class="fas fa-user-circle"></i>
+          <div id="profileDropdown" class="dropdown">
+            <p id="userName">Loading...</p>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </li>
+      </ul>
+
     </div>
-    <ul>
-      <li><a href="EComelec.html"><i class="fas fa-home"></i>Home</a></li>
-      <li><a href="About.html"><i class="fas fa-info-circle"></i>About</a></li>
-      <li><a href="vote.html"><i class="fas fa-vote-yea"></i>Vote</a></li>
-      <li><a href="result.html"><i class="fas fa-chart-bar"></i>Results</a></li>
-      <li><a class="active" href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
-    </ul>
   </nav>
 
   <!-- Contact Section -->
-  <section class="contact-section">
-    <h2>Contact Us</h2>
-    <p class="subtitle">We’d love to hear from you! Reach out for questions, feedback, or collaborations.</p>
+  <section class="contact-page scroll-animate">
+    <div class="contact-inner">
 
-    <div class="contact-container">
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <h3>Get in Touch</h3>
-        <p><i class="fa-solid fa-location-dot"></i> Southern Luzon State University Lucena Campus, Lucena City, Philippines</p>
-        <p><i class="fa-solid fa-envelope"></i> ComelecSLSULC@gmail.com</p>
-        <p><i class="fa-solid fa-phone"></i> +63 912 345 6789</p>
+      <div class="contact-header">
+        <span class="contact-pill">
+          <i class="fas fa-headset"></i> Contact & Support
+        </span>
+        <h1>Get in Touch with Campus e-COMELEC</h1>
+        <p class="subtitle">
+          We’d love to hear from you! Reach out for questions, feedback, or collaborations.
+        </p>
       </div>
 
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <form id="contactForm">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-card contact-info">
+          <h2><i class="fa-solid fa-circle-info"></i> Contact Details</h2>
+          <p><i class="fa-solid fa-location-dot"></i> SLSU Lucena Campus, Quezon Province, Philippines</p>
+          <p><i class="fa-solid fa-envelope"></i> ComelecSLSULC@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i> +63 912 345 6789</p>
 
-    <!-- Social Links -->
-    <div class="socials">
-      <p>Follow us on:</p>
-      <a href="#"><i class="fab fa-facebook"></i> Facebook</a> |
-      <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i> Email</a> |
-      <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
+          <div class="contact-highlight">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Office Hours</strong>
+              <span>Mon – Fri • 8:00 AM – 5:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-card contact-form">
+          <h2><i class="fa-solid fa-paper-plane"></i> Send us a Message</h2>
+          <form id="contactForm">
+            <div class="field-group">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="field-group">
+              <label>Your Email</label>
+              <input type="email" name="email" placeholder="Enter your email address" required>
+            </div>
+
+            <div class="field-group">
+              <label>Your Message</label>
+              <textarea name="message" rows="5" placeholder="Type your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="socials">
+        <p>Follow us on:</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i> Email</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -71,13 +131,11 @@
     </div>
   </footer>
 
-  <!-- Firebase Scripts -->
+  <!-- Firebase Script -->
   <script type="module">
-    // Import Firebase modules
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-    import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+    import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
 
-    // Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyBGwXduXRNtB42biPJe0KJkqzxxdz9IuqU",
       authDomain: "e-commelec.firebaseapp.com",
@@ -85,42 +143,77 @@
       projectId: "e-commelec",
       storageBucket: "e-commelec.firebasestorage.app",
       messagingSenderId: "334086674865",
-      appId: "1:334086674865:web:63766c30fd3e9a032e8590",
-      measurementId: "G-9JQ5FGVVFL"
+      appId: "1:334086674865:web:63766c30fd3e9a032e8590"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
 
-    // Handle contact form submission
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e) => {
+    /* CONTACT FORM SAVE */
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
+      const newMessage = push(ref(db, "contacts/"));
 
-      const name = form.name.value;
-      const email = form.email.value;
-      const message = form.message.value;
-
-      // Reference to "contacts" in Firebase
-      const contactRef = ref(db, 'contacts/');
-      const newContactRef = push(contactRef);
-
-      // Save data
-      set(newContactRef, {
-        name,
-        email,
-        message,
+      set(newMessage, {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
         timestamp: new Date().toISOString()
-      })
-      .then(() => {
-        alert('Your message has been sent successfully!');
+      }).then(() => {
+        alert("Message sent successfully!");
         form.reset();
-      })
-      .catch((error) => {
-        alert('Error sending message: ' + error);
       });
     });
+
+    /* PROFILE DROPDOWN */
+    const profileBtn = document.getElementById("profileBtn");
+    const profileDropdown = document.getElementById("profileDropdown");
+    const userNameEl = document.getElementById("userName");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    profileBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      profileDropdown.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!profileDropdown.contains(e.target) && !profileBtn.contains(e.target)) {
+        profileDropdown.classList.remove("active");
+      }
+    });
+
+    /* Load Profile Name from Firebase */
+    let currentUserEmail = localStorage.getItem("ec_userEmail");
+
+    if (!currentUserEmail) {
+      const oldUser = JSON.parse(localStorage.getItem("loggedUser") || "{}");
+      currentUserEmail = oldUser.email;
+    }
+
+    if (!currentUserEmail) {
+      userNameEl.textContent = "Not Logged In";
+    } else {
+      const safeEmail = currentUserEmail.replace(/\./g, "_");
+      const userRef = ref(db, `users/${safeEmail}`);
+
+      onValue(userRef, (snapshot) => {
+        const user = snapshot.val();
+        if (user && user.name) {
+          userNameEl.textContent = user.name; // SHOW REAL USER NAME
+        } else {
+          userNameEl.textContent = currentUserEmail;
+        }
+      });
+    }
+
+    /* Logout */
+    logoutBtn.onclick = () => {
+      localStorage.clear();
+      window.location.hrsef = "login.html";
+    };
   </script>
+
+  <script src="animation.js"></script>
 </body>
 </html>
