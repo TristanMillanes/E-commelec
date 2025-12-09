@@ -89,7 +89,7 @@
       </ul>
 
       <div class="requirements-footer">
-        <a href="files/requirements.pdf" download class="download-btn">
+        <a href="requirement/Certificate-of-Candidacy.docx" download class="download-btn">
           <i class="fas fa-download"></i>
           Download Full Requirements (PDF)
         </a>
@@ -320,6 +320,31 @@
         .catch((error) => {
           alert("Error submitting application: " + error.message);
         });
+    });
+
+    // ===== Step indicator click + animation =====
+    const stepElements = document.querySelectorAll('.form-steps .step');
+
+    stepElements.forEach((step) => {
+      step.addEventListener('click', () => {
+        // Change active step
+        stepElements.forEach(s => s.classList.remove('active'));
+        step.classList.add('active');
+
+        // Add bump animation on the number
+        const numberEl = step.querySelector('.step-number');
+        if (numberEl) {
+          numberEl.classList.remove('bump');   // reset
+          void numberEl.offsetWidth;           // reflow to restart animation
+          numberEl.classList.add('bump');      // play animation
+        }
+
+        // Optional: scroll form into view
+        const formTop = document.querySelector('.candidacy-form-modern');
+        if (formTop) {
+          formTop.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     });
   </script>
 

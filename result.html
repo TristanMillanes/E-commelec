@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -203,6 +203,7 @@
 
     onValue(ref(rtdb, "candidacy"), (snapshot) => {
       candidacyData = snapshot.val() || {};
+      console.log("CANDIDACY DATA:", candidacyData); // helper to see fields in console
       renderResults();
     });
 
@@ -210,6 +211,30 @@
       votesData = snapshot.val() || {};
       renderResults();
     });
+
+    // Helper to safely get candidate name from many possible fields
+    function getCandidateName(c, id) {
+      const firstLast =
+        [c.firstName, c.lastName].filter(Boolean).join(" ").trim() ||
+        [c.first_name, c.last_name].filter(Boolean).join(" ").trim();
+
+      const possible = [
+        c.fullName,
+        c.fullname,
+        c.name,
+        c.candidateName,
+        c.candidate_name,
+        c.studentName,
+        c.student_name,
+        c.displayName,
+        c.display_name,
+        c.username,
+        firstLast
+      ].filter(v => typeof v === "string" && v.trim().length > 0);
+
+      // If still nothing, fall back to id so "No Name" disappears
+      return possible[0] || id || "No Name";
+    }
 
     function renderResults() {
       const tbody = document.getElementById("resultsBody");
@@ -225,9 +250,13 @@
 
       ids.forEach(id => {
         const c = candidacyData[id] || {};
+        console.log("Candidate record for", id, c); // see exact object in console
+
+        const candidateName = getCandidateName(c, id);
+
         stats[id] = {
-          name: c.fullName || c.name || "No Name",
-          position: c.position || "Unknown",
+          name: candidateName,
+          position: c.position || c.positionName || "Unknown",
           affirmative: 0,
           total: 0
         };

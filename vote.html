@@ -264,25 +264,54 @@
     /* ------------------------- */
     /*  SAFE HELPERS             */
     /* ------------------------- */
-    function safeName(c) {
-      if (!c) return "Unnamed Candidate";
-      if (typeof c.fullName === "string" && c.fullName.trim()) return c.fullName.trim();
-      if (typeof c.name === "string" && c.name.trim()) return c.name.trim();
-      return "Unnamed Candidate";
+    function safeName(c, fallbackId = "") {
+      if (!c) return fallbackId || "Unnamed Candidate";
+
+      // Try combining first/last name (various formats)
+      const firstLast =
+        [c.firstName, c.lastName].filter(Boolean).join(" ").trim() ||
+        [c.first_name, c.last_name].filter(Boolean).join(" ").trim();
+
+      const possible = [
+        c.fullName,
+        c.fullname,
+        c.name,
+        c.candidateName,
+        c.candidate_name,
+        c.studentName,
+        c.student_name,
+        c.student_fullname,
+        c.displayName,
+        c.display_name,
+        c.username,
+        firstLast
+      ].filter(v => typeof v === "string" && v.trim().length > 0);
+
+      return possible[0] || fallbackId || "Unnamed Candidate";
     }
 
     function safePosition(c) {
       if (!c) return "Unknown";
-      if (typeof c.position === "string" && c.position.trim()) return c.position.trim();
-      if (typeof c.positionApplied === "string" && c.positionApplied.trim()) return c.positionApplied.trim();
-      return "Unknown";
+      const possible = [
+        c.position,
+        c.positionName,
+        c.position_name,
+        c.positionApplied
+      ].filter(v => typeof v === "string" && v.trim().length > 0);
+
+      return possible[0] || "Unknown";
     }
 
     function safeParty(c) {
       if (!c) return "";
-      if (typeof c.party === "string" && c.party.trim()) return c.party.trim();
-      if (typeof c.partylist === "string" && c.partylist.trim()) return c.partylist.trim();
-      return "";
+      const possible = [
+        c.party,
+        c.partylist,
+        c.partyList,
+        c.party_name
+      ].filter(v => typeof v === "string" && v.trim().length > 0);
+
+      return possible[0] || "";
     }
 
     /* ------------------------- */
@@ -304,7 +333,9 @@
 
         keys.forEach((key) => {
           const c = data[key] || {};
-          const candidateName = safeName(c);
+          console.log("Candidate record for", key, c); // helps see exact fields in console
+
+          const candidateName = safeName(c, key);
           const candidatePosition = safePosition(c);
           const candidateParty = safeParty(c);
 
@@ -409,7 +440,7 @@
           const selected = document.querySelector(`input[name="vote_${key}"]:checked`);
           if (selected) {
             const c = candidacyData[key] || {};
-            const candidateName = safeName(c);
+            const candidateName = safeName(c, key);
             const position = safePosition(c);
 
             votesToSave.push({

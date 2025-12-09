@@ -447,6 +447,7 @@ nav ul li a.active {
   gap: 0.15rem;
   font-size: 0.7rem;
   color: var(--text-muted);
+  cursor: pointer; /* ✅ make clickable */
 }
 
 .step-number {
@@ -459,6 +460,24 @@ nav ul li a.active {
   justify-content: center;
   font-size: 0.75rem;
   background: #eef2ff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ✅ click animation */
+.step-number.bump {
+  animation: step-bump 0.25s ease-out;
+}
+
+@keyframes step-bump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) translateY(-2px);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .step.active .step-number {
@@ -471,6 +490,12 @@ nav ul li a.active {
 .step-label {
   text-transform: uppercase;
   letter-spacing: 0.12em;
+}
+
+/* Highlight active label */
+.step.active .step-label {
+  color: #4f46e5;
+  font-weight: 700;
 }
 
 .form-title {
@@ -630,7 +655,7 @@ nav ul li a.active {
 }
 
 /* ==========================
-   FOOTER (MATCH OTHER PAGES)
+   FOOTER
 ========================== */
 footer {
   background: linear-gradient(90deg, var(--primary-dark), var(--primary));
