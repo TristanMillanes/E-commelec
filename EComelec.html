@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus e-COMELEC</title>
 
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="EComelec.css" />
-
   <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
   >
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="EComelec.css" />
 </head>
 <body>
   <!-- Navigation -->
@@ -35,10 +35,10 @@
 
         <!-- Profile Menu -->
         <li class="profile-menu">
-          <i id="profileBtn" class="fas fa-user-circle"></i>
-          <div id="profileDropdown" class="dropdown">
+          <i id="profileBtn" class="fas fa-user-circle" aria-haspopup="true" aria-expanded="false"></i>
+          <div id="profileDropdown" class="dropdown" role="menu" aria-hidden="true">
             <p id="userName">Loading...</p>
-            <button id="logoutBtn">Logout</button>
+            <button id="logoutBtn" type="button">Logout</button>
           </div>
         </li>
       </ul>
@@ -70,7 +70,7 @@
   </header>
 
   <!-- Democracy & Announcement Section -->
-  <section class="democracy-section scroll-animate-left">
+  <section class="democracy-section">
     <div class="democracy-inner">
       <div class="democracy-container">
         <div class="democracy-box">
@@ -96,7 +96,7 @@
   </section>
 
   <!-- Election Dashboard -->
-  <section class="dashboard scroll-animate-right">
+  <section class="dashboard">
     <div class="dashboard-inner">
       <h2 class="dashboard-title">
         <i class="fas fa-tachometer-alt"></i> Election Status Dashboard
@@ -138,7 +138,7 @@
   </section>
 
   <!-- About -->
-  <section class="about scroll-animate-left">
+  <section class="about">
     <div class="about-inner">
       <h2>SLSU Lucena E-COMELEC</h2>
       <p>
@@ -149,8 +149,8 @@
     </div>
   </section>
 
-  <!-- Upcoming Events (NOW DATABASE-DRIVEN) -->
-  <section class="upcoming scroll-animate-right">
+  <!-- Upcoming Events -->
+  <section class="upcoming">
     <div class="upcoming-inner">
       <h2>Upcoming Events</h2>
       <p class="upcoming-subtitle">
@@ -158,14 +158,13 @@
       </p>
 
       <div class="upcoming-container" id="upcomingContainer">
-        <!-- Filled by Firebase -->
         <p id="noEventsMsg">No upcoming events at the moment.</p>
       </div>
     </div>
   </section>
 
   <!-- Selection: Candidacy -->
-  <section class="selection scroll-animate-left">
+  <section class="selection">
     <div class="selection-inner">
       <h2>Running for Candidacy</h2>
       <p class="selection-subtitle">
@@ -193,7 +192,7 @@
   </section>
 
   <!-- Selection: Vote & Candidate -->
-  <section class="selection scroll-animate-right">
+  <section class="selection">
     <div class="selection-inner">
       <h2>Vote & Candidates</h2>
       <p class="selection-subtitle">
@@ -236,7 +235,9 @@
         <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
         <a href="mailto:info@slsecomelec.edu"><i class="fas fa-envelope"></i> Email</a>
         <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
-        <li id="userMenuBtn" style="cursor:pointer;"><i class="fas fa-bars"></i></li>
+        <button id="userMenuBtn" style="cursor:pointer; border:none; background:transparent; color:white; padding:.35rem .6rem; border-radius:999px;">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
   </footer>
@@ -261,36 +262,21 @@
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
 
-    // -------------------------
     // ANNOUNCEMENTS TICKER
-    // -------------------------
     const announcementList = document.getElementById('announcementList');
     let announcements = [];
     let currentIndex = 0;
     let tickerTimeout;
 
-    onValue(ref(db, "announcements"), (snapshot) => {
-      announcements = [];
-      if (!snapshot.exists()) {
-        announcements.push("📭 No new announcements at the moment.");
-      } else {
-        const data = snapshot.val();
-        Object.keys(data).forEach(id => {
-          if (data[id] && data[id].text) {
-            announcements.push("📢 " + data[id].text);
-          }
-        });
-        if (announcements.length === 0) {
-          announcements.push("📭 No new announcements at the moment.");
-        }
-      }
-      startTicker();
-    });
-
     function startTicker() {
+      if (!announcementList) return;
       announcementList.innerHTML = "";
       clearTimeout(tickerTimeout);
-      if (announcements.length === 0) return;
+      if (announcements.length === 0) {
+        const li = document.createElement('li'); li.textContent = "📭 No new announcements at the moment."; li.style.opacity = 1;
+        announcementList.appendChild(li);
+        return;
+      }
 
       announcements.forEach(text => {
         const li = document.createElement("li");
@@ -299,124 +285,92 @@
       });
 
       const items = announcementList.querySelectorAll("li");
-      items.forEach(li => (li.style.opacity = 0));
-
+      items.forEach(li => li.style.opacity = 0);
       currentIndex = 0;
 
       function showNext() {
         items.forEach(li => (li.style.opacity = 0));
-        if (items[currentIndex]) {
-          items[currentIndex].style.opacity = 1;
-        }
+        if (items[currentIndex]) items[currentIndex].style.opacity = 1;
         currentIndex = (currentIndex + 1) % items.length;
         tickerTimeout = setTimeout(showNext, 5000);
       }
-
       showNext();
     }
 
-    // -------------------------
-    // DASHBOARD INFO
-    // -------------------------
-    // Total Registered Voters
-    onValue(ref(db, 'users'), (snapshot) => {
-      const users = snapshot.val() || {};
-      document.getElementById('total-voters').textContent = Object.keys(users).length;
+    onValue(ref(db, "announcements"), (snapshot) => {
+      announcements = [];
+      if (!snapshot.exists()) {
+        announcements.push("📭 No new announcements at the moment.");
+      } else {
+        const data = snapshot.val();
+        Object.keys(data).forEach(id => {
+          if (data[id] && data[id].text) announcements.push("📢 " + data[id].text);
+        });
+        if (announcements.length === 0) announcements.push("📭 No new announcements at the moment.");
+      }
+      startTicker();
     });
 
-    // Votes Cast
+    // DASHBOARD DATA
+    onValue(ref(db, 'users'), (snapshot) => {
+      const users = snapshot.val() || {};
+      const el = document.getElementById('total-voters');
+      if (el) el.textContent = Object.keys(users).length;
+    });
+
     onValue(ref(db, 'votes'), (snapshot) => {
       const votesData = snapshot.val();
       let totalVotes = 0;
-
-      if (typeof votesData === "number") {
-        totalVotes = votesData;
-      } else if (votesData && typeof votesData === "object") {
-        totalVotes = Object.keys(votesData).length;
-      }
-
-      document.getElementById('votes-cast').textContent = totalVotes;
+      if (typeof votesData === "number") totalVotes = votesData;
+      else if (votesData && typeof votesData === "object") totalVotes = Object.keys(votesData).length;
+      const el = document.getElementById('votes-cast');
+      if (el) el.textContent = totalVotes;
     });
 
-    // Candidates
     onValue(ref(db, 'candidacy'), (snapshot) => {
       const candidates = snapshot.val() || {};
-      document.getElementById('candidates').textContent = Object.keys(candidates).length;
+      const el = document.getElementById('candidates');
+      if (el) el.textContent = Object.keys(candidates).length;
     });
 
-    // Election Status
     onValue(ref(db, 'electionStatus'), (snapshot) => {
       const status = snapshot.val() || 'TBA';
       const statusEl = document.getElementById('election-status');
+      if (!statusEl) return;
       statusEl.textContent = status;
-
-      statusEl.classList.remove('status-open', 'status-closed');
-      if (String(status).toLowerCase() === 'open') {
-        statusEl.classList.add('status-open');
-      } else if (String(status).toLowerCase() === 'closed') {
-        statusEl.classList.add('status-closed');
-      }
+      statusEl.classList.remove('status-open','status-closed');
+      if (String(status).toLowerCase() === 'open') statusEl.classList.add('status-open');
+      else if (String(status).toLowerCase() === 'closed') statusEl.classList.add('status-closed');
     });
 
-    // -------------------------
-    // UPCOMING EVENTS (READ-ONLY FROM DATABASE)
-    // -------------------------
+    // UPCOMING EVENTS
     const upcomingContainer = document.getElementById('upcomingContainer');
-
     onValue(ref(db, 'upcomingEvents'), (snapshot) => {
-      // Clear current content
+      if (!upcomingContainer) return;
       upcomingContainer.innerHTML = '';
-
       if (!snapshot.exists()) {
-        const p = document.createElement('p');
-        p.textContent = 'No upcoming events at the moment.';
-        p.style.textAlign = 'center';
-        upcomingContainer.appendChild(p);
-        return;
+        const p = document.createElement('p'); p.textContent = 'No upcoming events at the moment.'; p.style.textAlign='center';
+        upcomingContainer.appendChild(p); return;
       }
-
       const data = snapshot.val();
-      const eventIds = Object.keys(data);
-
+      const eventIds = Object.keys(data || {});
       if (eventIds.length === 0) {
-        const p = document.createElement('p');
-        p.textContent = 'No upcoming events at the moment.';
-        p.style.textAlign = 'center';
-        upcomingContainer.appendChild(p);
-        return;
+        const p = document.createElement('p'); p.textContent = 'No upcoming events at the moment.'; p.style.textAlign='center';
+        upcomingContainer.appendChild(p); return;
       }
-
       eventIds.forEach(id => {
         const event = data[id];
-
-        // Create card
-        const card = document.createElement('div');
-        card.classList.add('upcoming-card');
-
-        const title = document.createElement('h3');
-        title.textContent = event.title || 'Untitled Event';
-
-        const dateP = document.createElement('p');
-        dateP.innerHTML = `<strong>Date:</strong> ${event.date || 'TBA'}`;
-
-        const venueP = document.createElement('p');
-        venueP.innerHTML = `<strong>Venue:</strong> ${event.venue || 'TBA'}`;
-
-        const descP = document.createElement('p');
-        descP.textContent = event.description || 'Details will be announced soon.';
-
-        card.appendChild(title);
-        card.appendChild(dateP);
-        card.appendChild(venueP);
-        card.appendChild(descP);
-
+        const card = document.createElement('div'); card.classList.add('upcoming-card');
+        const title = document.createElement('h3'); title.textContent = event.title || 'Untitled Event';
+        const dateP = document.createElement('p'); dateP.innerHTML = `<strong>Date:</strong> ${event.date || 'TBA'}`;
+        const venueP = document.createElement('p'); venueP.innerHTML = `<strong>Venue:</strong> ${event.venue || 'TBA'}`;
+        const descP = document.createElement('p'); descP.textContent = event.description || 'Details will be announced soon.';
+        card.appendChild(title); card.appendChild(dateP); card.appendChild(venueP); card.appendChild(descP);
         upcomingContainer.appendChild(card);
       });
     });
 
-    // -------------------------
     // PROFILE DROPDOWN & USER NAME
-    // -------------------------
     const profileBtn = document.getElementById('profileBtn');
     const profileDropdown = document.getElementById('profileDropdown');
     const logoutBtn = document.getElementById('logoutBtn');
@@ -426,55 +380,45 @@
       profileBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         profileDropdown.classList.toggle('active');
+        const expanded = profileBtn.getAttribute('aria-expanded') === 'true';
+        profileBtn.setAttribute('aria-expanded', String(!expanded));
+        profileDropdown.setAttribute('aria-hidden', profileDropdown.classList.contains('active') ? 'false' : 'true');
       });
     }
-
     document.addEventListener('click', (e) => {
-      if (
-        profileDropdown &&
-        !profileDropdown.contains(e.target) &&
-        !profileBtn.contains(e.target)
-      ) {
+      if (profileDropdown && !profileDropdown.contains(e.target) && profileBtn && !profileBtn.contains(e.target)) {
         profileDropdown.classList.remove('active');
+        profileBtn?.setAttribute('aria-expanded', 'false');
+        profileDropdown?.setAttribute('aria-hidden', 'true');
       }
     });
 
-    // Get logged-in user email from localStorage
+    // Get logged-in user email from localStorage (fallbacks included)
     let currentUserEmail = localStorage.getItem("ec_userEmail");
-
-    // Fallback to old structure if you previously saved 'loggedUser'
     if (!currentUserEmail) {
       const oldUserRaw = localStorage.getItem("loggedUser");
       if (oldUserRaw) {
         try {
           const oldUser = JSON.parse(oldUserRaw);
-          if (oldUser && oldUser.email) {
-            currentUserEmail = oldUser.email;
-          }
-        } catch (e) {
-          console.error("Failed to parse loggedUser:", e);
-        }
+          if (oldUser && oldUser.email) currentUserEmail = oldUser.email;
+        } catch (e) { console.error("Failed to parse loggedUser:", e); }
       }
     }
 
     if (!currentUserEmail) {
-      userNameEl.textContent = "Not Logged In";
+      if (userNameEl) userNameEl.textContent = "Not Logged In";
     } else {
       const safeEmail = currentUserEmail.replace(/\./g, "_");
       const userRef = ref(db, "users/" + safeEmail);
-
       onValue(userRef, (snapshot) => {
         const user = snapshot.val();
-        if (user && user.name) {
-          userNameEl.textContent = user.name;
-        } else {
-          userNameEl.textContent = currentUserEmail;
-        }
+        if (user && user.name) userNameEl.textContent = user.name;
+        else userNameEl.textContent = currentUserEmail;
       });
     }
 
     // Logout
-    logoutBtn.addEventListener('click', () => {
+    logoutBtn?.addEventListener('click', () => {
       localStorage.removeItem("ec_userName");
       localStorage.removeItem("ec_userEmail");
       localStorage.removeItem("loggedUser");
@@ -482,7 +426,7 @@
     });
   </script>
 
-  <!-- Your scroll animation helper if you have one -->
+  <!-- Optional: your scroll animation helper -->
   <script src="animation.js"></script>
 </body>
 </html>
